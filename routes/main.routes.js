@@ -7,9 +7,9 @@ router.get("/",mainController.getAllInfo);
 router.post("/",mainController.createInfo);
 router.get("/:id",mainController.getById);
 
-/*router.get("/test", (req, res)=>{
-  res.send("<h2>Algo más complejo</h2><br><h3>Me quiero ir para mi casita</h3>"+"<button>Presiona</button>");
-});*/
+router.get("/test", (req, res)=>{
+  res.send("<h2>Algo X</h2><br><h3>Funciona porfavor</h3>"+"<button>Presiona</button>");
+});
 
 module.exports = router;
 
