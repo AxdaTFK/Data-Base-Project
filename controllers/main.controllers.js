@@ -5,12 +5,12 @@ const getAllInfo = (req, res) =>{
 };
 
 const createInfo = (req, res)=> {
-    const {id, name} = req.body;
-    if(!name || !id){
-        res.send("Información incompleta");
+    const {id, Titulo, Duracion, Genero, Album} = req.body;
+    if(!Titulo || !id || !Duracion || !Genero || !Album){
+        res.send("Info Missing");
     }
-    db.push({id: id, name: name});
-    res.send("Guardado existosamente");
+    db.push({id: id, title: Titulo, duration: Duracion, genre: Genero, album: Album});
+    res.send("Successfully saved");
 };
 
 //http://localhost:5000/main/id
