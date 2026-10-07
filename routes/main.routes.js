@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router(); //Se necesita un router -> Objeto que conecta las rutas
-const mainController = require('./../controllers/main.controllers');
+const mainController = require('../dao/user');
 
 //http://127.0.0.1:5000/
 router.get("/",mainController.getAllInfo);
@@ -12,6 +12,3 @@ router.get("/test", (req, res)=>{
 });
 
 module.exports = router;
-
-
-
