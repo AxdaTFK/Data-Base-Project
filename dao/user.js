@@ -1,4 +1,4 @@
-const db = require('../services/mysql.service');
+const db = require('../services/mysql.services');
 
 const getAll = async (req, res) => {
   try {
