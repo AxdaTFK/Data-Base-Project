@@ -11,7 +11,6 @@ const getSongs = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-
 const addSong = async (req, res) => {
   try {
     const { song_idsong } = req.body;
@@ -25,7 +24,6 @@ const addSong = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-
 const removeSong = async (req, res) => {
   try {
     const [result] = await db.query(
@@ -38,9 +36,8 @@ const removeSong = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-
-const removeByPlaylist = async (idplaylist) => {
-  await db.query('DELETE FROM tracklist WHERE playlist_idplaylist = ?', [idplaylist]);
+const removeByPlaylist = (playlistId) => {
+  return db.query('DELETE FROM tracklist WHERE playlist_idplaylist = ?', [playlistId]);
 };
 
 module.exports = { getSongs, addSong, removeSong, removeByPlaylist };
