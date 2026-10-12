@@ -5,7 +5,7 @@ const userDao = require('../dao/user');
 const suscriptionDao = require('../dao/suscription');
 const songDao = require('../dao/song');
 const playlistDao = require('../dao/playlist');
-const reviewDao = require('../dao/rewiew');
+const reviewDao = require('../dao/review');
 const tracklistDao = require('../dao/tracklist');
 
 ////// Prueba para el servidor http://localhost:5000/main/test
