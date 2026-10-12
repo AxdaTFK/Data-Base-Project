@@ -10,7 +10,7 @@ const tracklistDao = require('../dao/tracklist');
 
 ////// Prueba para el servidor http://localhost:5000/main/test
 router.get('/test', (req, res) => {
-  res.json({ message: 'Stufaron funciona bien' });
+  res.json({ message: 'Stuffaron funciona bien' });
 });
 
 router.post('/login', userDao.login);
