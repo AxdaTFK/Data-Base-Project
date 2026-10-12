@@ -6,7 +6,6 @@ const errorContent = (example) => ({
     example: { message: example },
   },
 });
-
 const options = {
   definition: {
     openapi: '3.0.0',
@@ -50,8 +49,6 @@ const options = {
           type: 'object',
           properties: { message: { type: 'string' } },
         },
-
-        // ---------- Auth ----------
         LoginInput: {
           type: 'object',
           required: ['email', 'password'],
@@ -60,8 +57,6 @@ const options = {
             password: { type: 'string', example: '123456' },
           },
         },
-
-        // ---------- User ----------
         User: {
           type: 'object',
           properties: {
@@ -84,8 +79,6 @@ const options = {
             suscription_idsuscription: { type: 'integer', example: 1 },
           },
         },
-
-        // ---------- Suscription ----------
         Suscription: {
           type: 'object',
           properties: {
@@ -98,8 +91,6 @@ const options = {
           required: ['type'],
           properties: { type: { type: 'string', example: 'premium' } },
         },
-
-        // ---------- Song ----------
         Song: {
           type: 'object',
           properties: {
@@ -116,8 +107,6 @@ const options = {
             duration: { type: 'integer', example: 215 },
           },
         },
-
-        // ---------- Playlist ----------
         Playlist: {
           type: 'object',
           properties: {
@@ -134,15 +123,11 @@ const options = {
             user_iduser: { type: 'integer', example: 1 },
           },
         },
-
-        // ---------- Tracklist ----------
         TracklistInput: {
           type: 'object',
           required: ['song_idsong'],
           properties: { song_idsong: { type: 'integer', example: 1 } },
         },
-
-        // ---------- Review ----------
         Review: {
           type: 'object',
           properties: {
