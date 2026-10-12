@@ -8,9 +8,9 @@ const playlistDao = require('../dao/playlist');
 const reviewDao = require('../dao/rewiew');
 const tracklistDao = require('../dao/tracklist');
 
-////// Prueba ppara el servidor http://127.0.0.1:5000/main/test
+////// Prueba para el servidor http://localhost:5000/main/test
 router.get('/test', (req, res) => {
-  res.json({ message: 'La API funciona correctamente' });
+  res.json({ message: 'Stufaron funciona bien' });
 });
 
 router.post('/login', userDao.login);
