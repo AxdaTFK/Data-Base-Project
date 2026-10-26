@@ -3,7 +3,7 @@ const db = require('../services/mysql.services');
 const getSongs = async (req, res) => {
   try {
     const [rows] = await db.query(
-      'SELECT s.* FROM tracklist t JOIN song s ON s.idsong = tracklist.song_idsong WHERE tracklist.playlist_idplaylist = ?',
+      'SELECT song.* FROM tracklist JOIN song ON song.idsong = tracklist.song_idsong WHERE tracklist.playlist_idplaylist = ?'
       [req.params.id]
     );
     res.json(rows);

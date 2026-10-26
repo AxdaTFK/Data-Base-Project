@@ -7,13 +7,14 @@ const songDao = require('../dao/song');
 const playlistDao = require('../dao/playlist');
 const reviewDao = require('../dao/review');
 const tracklistDao = require('../dao/tracklist');
+const artistDao = require('../dao/artist');
 
 ////// Prueba para el servidor http://localhost:5000/main/test
 router.get('/test', (req, res) => {
   res.json({ message: 'Stuffaron funciona bien' });
 });
 
-router.post('/login', userDao.login);
+router.post('/users/login', userDao.login);
 
 router.get('/suscriptions', suscriptionDao.getAll);
 router.get('/suscriptions/:id', suscriptionDao.getById);
@@ -50,5 +51,11 @@ router.get('/reviews/:id', reviewDao.getById);
 router.post('/reviews', reviewDao.create);
 router.put('/reviews/:id', reviewDao.update);
 router.delete('/reviews/:id', reviewDao.remove);
+
+router.get('/artists', artistDao.getAll);
+router.get('/artists/:id', artistDao.getById);
+router.post('/artists', artistDao.create);
+router.put('/artists/:id', artistDao.update);
+router.delete('/artists/:id', artistDao.remove);
 
 module.exports = router;
