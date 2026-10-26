@@ -19,21 +19,21 @@ const getById = async (req, res) => {
 };
 const create = async (req, res) => {
   try {
-    const { name, duration } = req.body;
-    if (!name || !duration) return res.status(400).json({ error: 'Bad Request' });
-    const [result] = await db.query('INSERT INTO song (name, duration) VALUES (?, ?)', [name, duration]);
-    res.status(201).json({ idsong: result.insertId, name, duration });
+    const { name, duration, artist_idartist } = req.body;
+    if (!name || !duration || !artist_idartist) return res.status(400).json({ error: 'Bad Request' });
+    const [result] = await db.query('INSERT INTO song (name, duration, artist_idartist) VALUES (?, ?, ?)', [name, duration, artist_idartist]);
+    res.status(201).json({ idsong: result.insertId, name, duration, artist_idartist });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 };
 const update = async (req, res) => {
   try {
-    const { name, duration } = req.body;
-    if (!name || !duration) return res.status(400).json({ error: 'Bad Request' });
-    const [result] = await db.query('UPDATE song SET name = ?, duration = ? WHERE idsong = ?', [name, duration, req.params.id]);
+    const { name, duration, artist_idartist } = req.body;
+    if (!name || !duration || !artist_idartist) return res.status(400).json({ error: 'Bad Request' });
+    const [result] = await db.query('UPDATE song SET name = ?, duration = ?, artist_idartist = ? WHERE idsong = ?', [name, duration, artist_idartist, req.params.id]);
     if (result.affectedRows === 0) return res.status(404).json({ error: 'No encontrado' });
-    res.json({ idsong: Number(req.params.id), name, duration });
+    res.json({ idsong: Number(req.params.id), name, duration, artist_idartist });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
