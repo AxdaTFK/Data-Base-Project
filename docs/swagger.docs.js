@@ -15,13 +15,16 @@
  *                 message:
  *                   type: string
  *                   example: Stuffaron funciona bien
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
  * @swagger
- * /login:
+ * /users/login:
  *   post:
  *     summary: Iniciar sesion
+ *     description: Compara el correo y la contrasena con los datos guardados y devuelve el usuario sin su contrasena
  *     tags: [Auth]
  *     requestBody:
  *       required: true
@@ -35,11 +38,13 @@
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/User'
+ *               $ref: '#/components/schemas/LoginResponse'
  *       400:
  *         $ref: '#/components/responses/BadRequest'
  *       401:
  *         $ref: '#/components/responses/Unauthorized'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -78,6 +83,8 @@
  *               $ref: '#/components/schemas/Suscription'
  *       404:
  *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -101,6 +108,8 @@
  *               $ref: '#/components/schemas/Suscription'
  *       400:
  *         $ref: '#/components/responses/BadRequest'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -128,6 +137,8 @@
  *         $ref: '#/components/responses/BadRequest'
  *       404:
  *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -139,10 +150,12 @@
  *     parameters:
  *       - $ref: '#/components/parameters/IdParam'
  *     responses:
- *       200:
+ *       204:
  *         description: Suscripcion eliminada
  *       404:
  *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -181,6 +194,8 @@
  *               $ref: '#/components/schemas/User'
  *       404:
  *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -204,6 +219,8 @@
  *               $ref: '#/components/schemas/User'
  *       400:
  *         $ref: '#/components/responses/BadRequest'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -231,6 +248,8 @@
  *         $ref: '#/components/responses/BadRequest'
  *       404:
  *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -242,10 +261,12 @@
  *     parameters:
  *       - $ref: '#/components/parameters/IdParam'
  *     responses:
- *       200:
- *         description: Usuario eliminada
+ *       204:
+ *         description: Usuario eliminado
  *       404:
  *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -265,8 +286,8 @@
  *               type: array
  *               items:
  *                 $ref: '#/components/schemas/Playlist'
- *       404:
- *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -305,6 +326,8 @@
  *               $ref: '#/components/schemas/Song'
  *       404:
  *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -328,6 +351,8 @@
  *               $ref: '#/components/schemas/Song'
  *       400:
  *         $ref: '#/components/responses/BadRequest'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -355,6 +380,8 @@
  *         $ref: '#/components/responses/BadRequest'
  *       404:
  *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -366,10 +393,12 @@
  *     parameters:
  *       - $ref: '#/components/parameters/IdParam'
  *     responses:
- *       200:
+ *       204:
  *         description: Cancion eliminada
  *       404:
  *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -389,8 +418,8 @@
  *               type: array
  *               items:
  *                 $ref: '#/components/schemas/Review'
- *       404:
- *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -429,6 +458,8 @@
  *               $ref: '#/components/schemas/Playlist'
  *       404:
  *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -452,6 +483,8 @@
  *               $ref: '#/components/schemas/Playlist'
  *       400:
  *         $ref: '#/components/responses/BadRequest'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -479,6 +512,8 @@
  *         $ref: '#/components/responses/BadRequest'
  *       404:
  *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -490,10 +525,12 @@
  *     parameters:
  *       - $ref: '#/components/parameters/IdParam'
  *     responses:
- *       200:
+ *       204:
  *         description: Playlist eliminada
  *       404:
  *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -513,8 +550,8 @@
  *               type: array
  *               items:
  *                 $ref: '#/components/schemas/Song'
- *       404:
- *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -534,10 +571,18 @@
  *     responses:
  *       201:
  *         description: Cancion agregada a la playlist
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/TracklistItem'
  *       400:
  *         $ref: '#/components/responses/BadRequest'
- *       404:
- *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         description: Error interno del servidor (por ejemplo, la cancion ya esta en la playlist, o la playlist o la cancion no existen)
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Error'
  */
 
 /**
@@ -554,10 +599,12 @@
  *         schema:
  *           type: integer
  *     responses:
- *       200:
+ *       204:
  *         description: Cancion eliminada de la playlist
  *       404:
  *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -596,6 +643,8 @@
  *               $ref: '#/components/schemas/Review'
  *       404:
  *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -619,6 +668,8 @@
  *               $ref: '#/components/schemas/Review'
  *       400:
  *         $ref: '#/components/responses/BadRequest'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -646,6 +697,8 @@
  *         $ref: '#/components/responses/BadRequest'
  *       404:
  *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
 
 /**
@@ -657,8 +710,121 @@
  *     parameters:
  *       - $ref: '#/components/parameters/IdParam'
  *     responses:
- *       200:
+ *       204:
  *         description: Resena eliminada
  *       404:
  *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
+ */
+
+/**
+ * @swagger
+ * /artists:
+ *   get:
+ *     summary: Obtener todos los artistas
+ *     tags: [Artists]
+ *     responses:
+ *       200:
+ *         description: Lista de artistas
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Artist'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
+ */
+
+/**
+ * @swagger
+ * /artists/{id}:
+ *   get:
+ *     summary: Obtener artista por id
+ *     tags: [Artists]
+ *     parameters:
+ *       - $ref: '#/components/parameters/IdParam'
+ *     responses:
+ *       200:
+ *         description: Artista encontrado
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Artist'
+ *       404:
+ *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
+ */
+
+/**
+ * @swagger
+ * /artists:
+ *   post:
+ *     summary: Crear artista
+ *     tags: [Artists]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/ArtistInput'
+ *     responses:
+ *       201:
+ *         description: Artista creado
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Artist'
+ *       400:
+ *         $ref: '#/components/responses/BadRequest'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
+ */
+
+/**
+ * @swagger
+ * /artists/{id}:
+ *   put:
+ *     summary: Actualizar artista
+ *     tags: [Artists]
+ *     parameters:
+ *       - $ref: '#/components/parameters/IdParam'
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/ArtistInput'
+ *     responses:
+ *       200:
+ *         description: Artista actualizado
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Artist'
+ *       400:
+ *         $ref: '#/components/responses/BadRequest'
+ *       404:
+ *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
+ */
+
+/**
+ * @swagger
+ * /artists/{id}:
+ *   delete:
+ *     summary: Eliminar artista
+ *     tags: [Artists]
+ *     parameters:
+ *       - $ref: '#/components/parameters/IdParam'
+ *     responses:
+ *       204:
+ *         description: Artista eliminado
+ *       404:
+ *         $ref: '#/components/responses/NotFound'
+ *       500:
+ *         $ref: '#/components/responses/ServerError'
  */
