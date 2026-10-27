@@ -1,0 +1,11 @@
+#panel-contenido {
+    padding: 18px 38px 0 43px;
+}
+
+#lista-usuarios {
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    justify-content: space-between;
+    gap: 37px 0;
+    margin-top: 47px;
+}

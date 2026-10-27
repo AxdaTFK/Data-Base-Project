@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920" />
+    <title>SoundNest - Inicio de sesión</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/autenticacion.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <section id="tarjeta-formulario" class="panel-vidrio"></section>
+    <img id="fondo-ilustracion" src="assets/upbar.png" alt="" />
+    <img
+      id="ilustracion-chica"
+      src="assets/illustracion-1.png"
+      alt="Chica con audífonos y patineta"
+    />
+    <form
+      class="formulario-autenticacion"
+      id="formulario-inicio-sesion"
+      action="home-free.html"
+      method="post"
+    >
+      <img
+        id="logo-formulario"
+        src="assets/logo-blanco.png"
+        alt="Logo de SoundNest"
+      />
+      <h1 id="titulo-formulario">¡Que bueno verte de nuevo!</h1>
+      <label class="campo-formulario">
+        Correo Electrónico
+        <input
+          class="entrada-texto"
+          name="correo"
+          type="email"
+          autocomplete="email"
+          required
+        />
+      </label>
+      <label class="campo-formulario">
+        Contraseña
+        <input
+          class="entrada-texto"
+          name="contrasena"
+          type="password"
+          autocomplete="current-password"
+          required
+        />
+      </label>
+      <button id="boton-enviar" type="submit">Iniciar Sesión</button>
+      <p id="texto-ayuda">¿Sin cuenta aún?</p>
+      <a id="enlace-alternativo" href="registro.html">Registro</a>
+    </form>
+  </body>
+</html>

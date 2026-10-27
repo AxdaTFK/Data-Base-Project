@@ -1,0 +1,18 @@
+html {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.769), rgba(0, 0, 0, 0.769)),
+        url("../assets/image-3.png") center / cover no-repeat fixed;
+}
+
+body {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    padding-top: 14px;
+}
+
+#mensaje-carga {
+    margin-top: 9px;
+    font-size: 35px;
+    letter-spacing: -0.3px;
+}

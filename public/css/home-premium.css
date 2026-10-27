@@ -1,0 +1,12 @@
+#banner-imagen-premium {
+    position: absolute;
+    top: 0;
+    left: 100px;
+    width: 881px;
+}
+
+@media (max-width: 1500px) {
+    #banner-imagen-premium {
+        zoom: 0.62;
+    }
+}

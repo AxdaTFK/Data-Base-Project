@@ -1,0 +1,25 @@
+#ilustracion-chica {
+    top: 177px;
+    left: 129px;
+    width: 778px;
+}
+
+.formulario-autenticacion {
+    top: 158px;
+}
+
+#titulo-formulario {
+    margin-top: 2px;
+}
+
+.campo-formulario {
+    margin-top: 21px;
+}
+
+#titulo-formulario+.campo-formulario {
+    margin-top: 40px;
+}
+
+#boton-enviar {
+    margin-top: 61px;
+}

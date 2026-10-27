@@ -1,0 +1,28 @@
+#superposicion-confirmacion {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 266px;
+    background: rgba(0, 0, 0, 0.62);
+}
+
+#superposicion-confirmacion img {
+    width: 163px;
+}
+
+#mensaje-confirmacion {
+    margin-top: 24px;
+    font-size: 70px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+#boton-cerrar {
+    width: 456px;
+    height: 95px;
+    margin-top: 104px;
+    border-radius: 29px;
+    font-size: 53px;
+}

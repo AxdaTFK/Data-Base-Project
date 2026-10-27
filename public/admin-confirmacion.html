@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920" />
+    <title>SoundNest - Contenido cargado</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/admin-nuevo.css" />
+    <link rel="stylesheet" href="css/admin-confirmacion.css" />
+  </head>
+  <body>
+    <nav id="menu-lateral" class="panel-vidrio">
+      <a
+        id="enlace-administrador" class="enlace-menu-lateral"
+        href="admin-dashboard.html"
+        >Administrador</a
+      >
+      <a class="enlace-menu-lateral" href="admin-dashboard.html">
+        <img src="assets/analytics.png" alt="" />
+        Dashboard
+      </a>
+      <a class="enlace-menu-lateral" href="admin-usuarios.html">
+        <img src="assets/user.png" alt="" />
+        Usuarios
+      </a>
+      <a class="enlace-menu-lateral" href="#">
+        <img src="assets/combo-chart.png" alt="" />
+        Suscripciones
+      </a>
+      <img id="logo-menu-lateral" src="assets/logo.png" alt="SoundNest" />
+    </nav>
+    <main id="panel-contenido" class="panel-vidrio">
+      <h1 id="titulo-panel">Añadir Nuevo Contendio de Música</h1>
+      <label id="zona-subida-archivo">
+        <input
+          name="archivo-audio"
+          type="file"
+          accept="audio/*"
+          form="formulario-contenido"
+          hidden
+        />
+        <img src="assets/upward-arrow.png" alt="" />
+        <span>Subir Archivo</span>
+      </label>
+      <div id="vista-previa-portada">
+        <img src="assets/pencil.svg" alt="Editar portada" />
+      </div>
+      <form
+       
+        id="formulario-contenido"
+        action="admin-confirmacion.html"
+        method="post"
+      >
+        <label>
+          Nombre de la canción
+          <input name="nombre-cancion" type="text" required />
+        </label>
+        <label>
+          Artista
+          <input name="artista" type="text" required />
+        </label>
+        <label>
+          Álbum
+          <input name="album" type="text" />
+        </label>
+        <label>
+          Género
+          <input name="genero" type="text" />
+        </label>
+        <label>
+          Año de Lanzamiento
+          <input name="anio-lanzamiento" type="number" min="1900" max="2100" />
+        </label>
+      </form>
+      <button
+        id="boton-publicar-contenido" class="boton-azul"
+        type="submit"
+        form="formulario-contenido"
+      >
+        Publicar
+      </button>
+    </main>
+    <div id="superposicion-confirmacion">
+      <img src="assets/approval.svg" alt="Aprobado" />
+      <p id="mensaje-confirmacion">
+        Se cargó correctamente la canción<br />
+        al catálogo
+      </p>
+      <a id="boton-cerrar" class="boton-azul" href="admin-dashboard.html">Cerrar</a>
+    </div>
+  </body>
+</html>

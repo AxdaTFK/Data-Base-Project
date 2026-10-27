@@ -1,0 +1,92 @@
+html {
+    background:
+        url("../assets/fondo-1.png") center / 100% 100% no-repeat fixed,
+        linear-gradient(#4700e0, #5b5264) fixed;
+}
+
+body>* {
+    position: absolute;
+}
+
+#logo-presentacion {
+    top: 73px;
+    left: 108px;
+    width: 200px;
+}
+
+#menu-navegacion {
+    top: 73px;
+    right: 90px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    font-size: 26px;
+}
+
+#boton-iniciar-sesion {
+    padding: 6px 42px;
+    border-radius: 50px;
+    background: #9100e0;
+}
+
+#boton-empezar {
+    margin-left: -17px;
+    padding: 6px 32px;
+    border-radius: 50px;
+    background: #ffffff;
+    color: #4703dc;
+}
+
+#titulo-principal {
+    top: 330px;
+    left: 100px;
+    font: 88px/88px "Lalezar";
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.267);
+}
+
+#palabra-destacada {
+    font-size: 99px;
+    color: #57dee2;
+}
+
+#descripcion-principal {
+    top: 512px;
+    left: 100px;
+    width: 590px;
+    font: 400 35px/1.304 "K2D";
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.267);
+}
+
+#botones-descarga {
+    top: 657px;
+    left: 94px;
+    display: flex;
+    gap: 40px;
+    font-size: 22px;
+}
+
+#boton-descargar-windows,
+#boton-abrir-navegador {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 51px;
+    padding: 0 24px;
+    border-radius: 17px;
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.267);
+}
+
+#boton-descargar-windows {
+    background: #ffffff;
+    color: #4703dc;
+}
+
+#boton-abrir-navegador {
+    background: #9100e0;
+}
+
+#ilustracion-tigre {
+    top: 202px;
+    left: 1084px;
+    width: 662px;
+}
