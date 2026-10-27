@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920">
+    <title>SoundNest - Reseñas</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/resenas.css">
+</head>
+<body>
+    <header id="barra-superior" class="panel-vidrio">
+        <a id="marca" href="index.html">
+            <img src="assets/group-100.png" alt="Logo de SoundNest">
+            <span id="plan-usuario">Free</span>
+        </a>
+        <div id="buscador-central">
+            <a id="boton-inicio" href="home-free.html">
+                <img src="assets/home-page.png" width="37" alt="Inicio">
+            </a>
+            <div id="campo-busqueda">
+                <img src="assets/search.png" width="35" alt="">
+                <input id="buscador" name="busqueda" type="search" aria-label="Buscar">
+                <img src="assets/document-in-folder.png" width="30" alt="">
+            </div>
+        </div>
+        <a id="avatar-usuario" href="login.html">
+            <img src="assets/ellipse-1.png" alt="Perfil del usuario">
+        </a>
+    </header>
+    <div id="columna-izquierda">
+        <div id="panel-cancion-actual" class="panel-lateral">
+            <img src="assets/circled-play-button.png" alt="Reproducir">
+        </div>
+        <div id="panel-cola-reproduccion" class="panel-lateral">
+            <div class="elemento-cola">
+                <span class="portada-elemento-cola"></span>
+                <img src="assets/circled-play-button.png" alt="Reproducir">
+            </div>
+            <div class="elemento-cola">
+                <span class="portada-elemento-cola"></span>
+                <img src="assets/circled-play-button.png" alt="Reproducir">
+            </div>
+            <div class="elemento-cola">
+                <span class="portada-elemento-cola"></span>
+                <img src="assets/circled-play-button.png" alt="Reproducir">
+            </div>
+            <div class="elemento-cola">
+                <span class="portada-elemento-cola"></span>
+                <img src="assets/circled-play-button.png" alt="Reproducir">
+            </div>
+        </div>
+    </div>
+    <label id="opcion-etiquetas" class="opcion-adicional">
+        <img src="assets/checkbox.svg" alt="">
+        Agregar etiquetas
+    </label>
+    <label id="opcion-reproducciones" class="opcion-adicional">
+        <img src="assets/checkbox.svg" alt="">
+        Agregar numero de reproducciones
+    </label>
+    <main id="panel-resena" class="panel-vidrio">
+        <div id="datos-cancion">
+            <p>Nombre de la canción</p>
+            <p>Álbum</p>
+            <p id="nombre-artista">Artista</p>
+            <strong id="calificacion">4.9</strong>
+        </div>
+        <a id="boton-agregar-playlist" href="#">
+            <img src="assets/plus-math.png" alt="">
+            Agregar a la playlist
+        </a>
+        <form id="formulario-resena" method="post">
+            <span id="portada-resena"></span>
+            <div id="contenido-resena">
+                <h2 id="titulo-resena">Tu reseña</h2>
+                <textarea name="resena" placeholder="Comparte tu opinión sobre esta canción...*" required></textarea>
+            </div>
+        </form>
+        <button id="boton-publicar-resena" type="submit" form="formulario-resena">Publicar</button>
+    </main>
+    <footer class="panel-vidrio barra-reproductor" id="reproductor">
+        <div class="cancion-actual" id="informacion-cancion">
+            <span id="portada-cancion-actual"></span>
+            <div>
+                Nombre<br>
+                Artista - Álbum
+            </div>
+        </div>
+        <div id="controles-reproduccion">
+            <nav id="botones-reproduccion">
+                <img id="boton-aleatorio" src="assets/shuffle.png" alt="Aleatorio">
+                <img id="boton-anterior" src="assets/end.png" alt="Anterior">
+                <img id="boton-reproducir" src="assets/play-button.png" alt="Reproducir">
+                <img id="boton-siguiente" src="assets/end-1.png" alt="Siguiente">
+                <img id="boton-repetir" src="assets/group-70.png" alt="Repetir">
+            </nav>
+            <input
+                id="control-progreso"
+                type="range"
+                min="0"
+                max="253"
+                value="4"
+                style="--porcentaje-relleno: 1.6%"
+                oninput="this.style.setProperty('--porcentaje-relleno', this.value / this.max * 100 + '%')">
+            <div id="tiempos-reproduccion">
+                <span id="tiempo-actual">0:04</span>
+                <span id="tiempo-restante">-4:13</span>
+            </div>
+        </div>
+        <div id="controles-volumen">
+            <img id="icono-me-gusta" src="assets/heart.png" alt="Me gusta">
+            <img id="icono-volumen" src="assets/speaker.png" alt="Volumen">
+            <input
+                id="control-volumen"
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+                style="--porcentaje-relleno: 50%"
+                oninput="this.style.setProperty('--porcentaje-relleno', this.value / this.max * 100 + '%')">
+        </div>
+    </footer>
+</body>
+</html>

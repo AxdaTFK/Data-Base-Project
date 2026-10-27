@@ -1,0 +1,193 @@
+body {
+    grid-template-rows: 98px 630px 137px;
+    grid-template-columns: 250px 1fr;
+    gap: 34px 38px;
+}
+
+#barra-superior,
+.barra-reproductor {
+    grid-column: 1 / 3;
+}
+
+#columna-izquierda {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.panel-lateral {
+    border-radius: 21px;
+    background: rgba(68, 63, 78, 0.7);
+}
+
+#panel-cancion-actual {
+    position: relative;
+    height: 198px;
+}
+
+#panel-cancion-actual img {
+    position: absolute;
+    top: 78px;
+    right: 0;
+    width: 48px;
+}
+
+#panel-cola-reproduccion {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px 30px 14px 28px;
+}
+
+.elemento-cola {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 21px 0 13px;
+    border-radius: 21px;
+    background: rgba(83, 77, 96, 0.74);
+}
+
+.portada-elemento-cola {
+    width: 59px;
+    height: 51px;
+    border-radius: 11px;
+    background: #d9d9d9;
+}
+
+.elemento-cola img {
+    width: 48px;
+}
+
+.opcion-adicional {
+    position: absolute;
+    left: 1331px;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    font-size: 18px;
+}
+
+.opcion-adicional img {
+    width: 22px;
+}
+
+#opcion-etiquetas {
+    top: 553px;
+}
+
+#opcion-reproducciones {
+    top: 586px;
+}
+
+#panel-resena {
+    position: relative;
+    background: rgba(50, 46, 57, 0.76);
+    font-weight: 400;
+}
+
+#datos-cancion {
+    position: absolute;
+    top: 32px;
+    left: 57px;
+    font-size: 26px;
+}
+
+#datos-cancion p {
+    margin-bottom: 34px;
+}
+
+#datos-cancion #nombre-artista {
+    font-family: "Inter";
+}
+
+#calificacion {
+    display: block;
+    margin-top: -12px;
+    font-size: 70px;
+    line-height: 90px;
+}
+
+#boton-agregar-playlist {
+    position: absolute;
+    top: 32px;
+    right: 60px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 360px;
+    height: 73px;
+    padding-left: 42px;
+    border-radius: 21px;
+    background: rgba(50, 46, 57, 0.76);
+    font-size: 22px;
+}
+
+#boton-agregar-playlist img {
+    width: 44px;
+}
+
+#formulario-resena {
+    position: absolute;
+    top: 331px;
+    right: 57px;
+    left: 57px;
+    display: flex;
+    gap: 35px;
+    height: 249px;
+    padding: 33px 34px;
+    border-radius: 21px;
+    background: rgba(77, 71, 88, 0.82);
+}
+
+#portada-resena,
+#formulario-resena textarea {
+    border-radius: 21px;
+    background: rgba(105, 97, 120, 0.82);
+}
+
+#portada-resena {
+    flex: none;
+    width: 187px;
+    height: 187px;
+}
+
+#contenido-resena {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#titulo-resena {
+    font: 400 26px "Iosevka";
+}
+
+#formulario-resena textarea {
+    height: 132px;
+    padding: 16px;
+    border: 0;
+    resize: none;
+    color: #ffffff;
+    font: 22px "Inter";
+}
+
+#formulario-resena textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#boton-publicar-resena {
+    position: absolute;
+    top: 529px;
+    right: 147px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 224px;
+    height: 66px;
+    border-radius: 27px;
+    background: #4700e0;
+    font: 700 26px "Iosevka";
+}

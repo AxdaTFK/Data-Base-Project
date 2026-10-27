@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920" />
+    <title>SoundNest - Registro</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/autenticacion.css" />
+    <link rel="stylesheet" href="css/registro.css" />
+  </head>
+  <body>
+    <section id="tarjeta-formulario" class="panel-vidrio"></section>
+    <img id="fondo-ilustracion" src="assets/upbar.png" alt="" />
+    <div id="contenedor-ilustracion-astronauta">
+      <img
+        id="ilustracion-astronauta"
+        src="assets/group-140.png"
+        alt="Astronauta tocando guitarra"
+      />
+    </div>
+    <form
+      class="formulario-autenticacion"
+      id="formulario-registro"
+      action="home-free.html"
+      method="post"
+    >
+      <img
+        id="logo-formulario"
+        src="assets/logo-blanco.png"
+        alt="Logo de SoundNest"
+      />
+      <h1 id="titulo-formulario">¡Empieza tu historia musical!</h1>
+      <label class="campo-formulario">
+        Nombre de Usuario
+        <input
+          class="entrada-texto"
+          name="usuario"
+          type="text"
+          autocomplete="username"
+          required
+        />
+      </label>
+      <label class="campo-formulario">
+        Correo Electronico
+        <input
+          class="entrada-texto"
+          name="correo"
+          type="email"
+          autocomplete="email"
+          required
+        />
+      </label>
+      <label class="campo-formulario">
+        Crear Contraseña
+        <input
+          class="entrada-texto"
+          name="contrasena"
+          type="password"
+          autocomplete="new-password"
+          minlength="10"
+          required
+        />
+      </label>
+      <div id="requisitos-contrasena">
+        Contraseña debe tener
+        <ul>
+          <li>1 Letra mayúscula</li>
+          <li>1 número o carácter especial</li>
+          <li>10 carácteres mínimo</li>
+        </ul>
+      </div>
+      <button id="boton-enviar" type="submit">Crear cuenta</button>
+      <p id="texto-ayuda">¿Ya estas registrado?</p>
+      <a id="enlace-alternativo" href="login.html">Inicio de sesión</a>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+#banner-imagen-anuncio,
+#banner-logo,
+#banner-etiqueta-premium {
+    position: absolute;
+}
+
+#banner-imagen-anuncio {
+    top: -12px;
+    left: -17px;
+    width: 768px;
+}
+
+#banner-logo {
+    top: 26px;
+    right: 58px;
+    width: 144px;
+    font: 700 29px "K2D";
+    text-align: center;
+}
+
+#banner-logo img {
+    height: 95px;
+    margin: 0 auto -4px;
+}
+
+#banner-etiqueta-premium {
+    top: 146px;
+    right: 47px;
+    font-size: 43px;
+    color: #0002e0;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.267);
+}

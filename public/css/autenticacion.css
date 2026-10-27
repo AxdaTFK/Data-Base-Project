@@ -1,0 +1,69 @@
+body>* {
+    position: absolute;
+}
+
+#tarjeta-formulario {
+    top: 73px;
+    left: 72px;
+    width: 1776px;
+    height: 935px;
+}
+
+#fondo-ilustracion {
+    top: 121px;
+    left: 129px;
+    width: 750px;
+    height: 833px;
+}
+
+.formulario-autenticacion {
+    left: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 726px;
+}
+
+#logo-formulario {
+    height: 99px;
+}
+
+#titulo-formulario {
+    font-size: 53px;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    font-size: 22px;
+}
+
+.entrada-texto {
+    width: 560px;
+    height: 50px;
+    border: 0;
+    border-radius: 29px;
+    background: #ffffff;
+}
+
+#boton-enviar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 278px;
+    height: 57px;
+    border-radius: 29px;
+    background: #0002e0;
+}
+
+#texto-ayuda {
+    margin-top: 22px;
+    font-weight: 500;
+}
+
+#enlace-alternativo {
+    margin-top: 21px;
+    font-size: 26px;
+}

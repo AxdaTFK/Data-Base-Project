@@ -1,0 +1,46 @@
+#contenedor-ilustracion-astronauta {
+    top: 121px;
+    left: 129px;
+    width: 750px;
+    height: 833px;
+    border-radius: 27px;
+    overflow: hidden;
+}
+
+#ilustracion-astronauta {
+    position: absolute;
+    top: 93px;
+    left: -103px;
+    width: 852px;
+}
+
+.formulario-autenticacion {
+    top: 136px;
+}
+
+#titulo-formulario {
+    margin-top: 1px;
+}
+
+.campo-formulario {
+    margin-top: 22px;
+}
+
+#titulo-formulario+.campo-formulario {
+    margin-top: 32px;
+}
+
+#requisitos-contrasena {
+    align-self: flex-start;
+    margin: 32px 0 0 246px;
+    font-size: 20px;
+    line-height: 1.25;
+}
+
+#requisitos-contrasena ul {
+    margin-left: 30px;
+}
+
+#boton-enviar {
+    margin-top: 33px;
+}
