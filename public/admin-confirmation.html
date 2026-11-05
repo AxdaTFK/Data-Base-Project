@@ -11,45 +11,44 @@
     <link rel="stylesheet" href="css/admin-confirmation.css" />
   </head>
   <body>
-    <nav id="menu-lateral" class="panel-vidrio">
-      <a
-        id="enlace-administrador" class="enlace-menu-lateral"
-        href="admin-dashboard.html"
-        >Administrador</a
-      >
-      <a class="enlace-menu-lateral" href="admin-dashboard.html">
+    <nav id="sidebar-menu" class="glass-panel">
+      <button id="admin-link" class="sidebar-menu-link" type="button">Administrador</button>
+      <a class="sidebar-menu-link" href="admin-dashboard.html">
         <img src="assets/analytics.png" alt="" />
         Dashboard
       </a>
-      <a class="enlace-menu-lateral" href="admin-users.html">
+      <a class="sidebar-menu-link" href="admin-users.html">
         <img src="assets/user.png" alt="" />
         Usuarios
       </a>
-      <a class="enlace-menu-lateral" href="#">
+      <a class="sidebar-menu-link" href="admin-subscriptions.html">
         <img src="assets/combo-chart.png" alt="" />
         Suscripciones
       </a>
-      <img id="logo-menu-lateral" src="assets/logo.png" alt="SoundNest" />
+      <img id="sidebar-logo" src="assets/logo.png" alt="SoundNest" />
+      <a id="logout" href="login.html" title="Cerrar sesión">
+        <img src="assets/Logout Rounded.png" alt="Cerrar sesión" />
+      </a>
     </nav>
-    <main id="panel-contenido" class="panel-vidrio">
-      <h1 id="titulo-panel">Añadir Nuevo Contendio de Música</h1>
-      <label id="zona-subida-archivo">
+    <main id="content-panel" class="glass-panel">
+      <h1 id="panel-title">Añadir Nuevo Contendio de Música</h1>
+      <label id="upload-area">
         <input
           name="archivo-audio"
           type="file"
           accept="audio/*"
-          form="formulario-contenido"
+          form="content-form"
           hidden
         />
         <img src="assets/upward-arrow.png" alt="" />
         <span>Subir Archivo</span>
       </label>
-      <div id="vista-previa-portada">
+      <div id="cover-preview">
         <img src="assets/pencil.svg" alt="Editar portada" />
       </div>
       <form
        
-        id="formulario-contenido"
+        id="content-form"
         action="admin-confirmation.html"
         method="post"
       >
@@ -75,20 +74,24 @@
         </label>
       </form>
       <button
-        id="boton-publicar-contenido" class="boton-azul"
+        id="publish-content-button" class="blue-button"
         type="submit"
-        form="formulario-contenido"
+        form="content-form"
       >
         Publicar
       </button>
     </main>
-    <div id="superposicion-confirmacion">
+    <div id="confirmation-overlay">
       <img src="assets/approval.svg" alt="Aprobado" />
-      <p id="mensaje-confirmacion">
+      <p id="confirmation-message">
         Se cargó correctamente la canción<br />
         al catálogo
       </p>
-      <a id="boton-cerrar" class="boton-azul" href="admin-dashboard.html">Cerrar</a>
+      <a id="close-button" class="blue-button" href="admin-dashboard.html">Cerrar</a>
     </div>
+    <script src="js/sql.js"></script>
+    <script src="js/session-storage.js"></script>
+    <script src="js/user-interface.js"></script>
+    <script src="js/admin-panel.js"></script>
   </body>
 </html>

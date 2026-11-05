@@ -2,21 +2,21 @@ body>* {
     position: absolute;
 }
 
-#tarjeta-formulario {
+#form-card {
     top: 73px;
     left: 72px;
     width: 1776px;
     height: 935px;
 }
 
-#fondo-ilustracion {
+#illustration-background {
     top: 121px;
     left: 129px;
     width: 750px;
     height: 833px;
 }
 
-.formulario-autenticacion {
+.auth-form {
     left: 1000px;
     display: flex;
     flex-direction: column;
@@ -24,15 +24,15 @@ body>* {
     width: 726px;
 }
 
-#logo-formulario {
+#form-logo {
     height: 99px;
 }
 
-#titulo-formulario {
+#form-title {
     font-size: 53px;
 }
 
-.campo-formulario {
+.form-field {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,7 +40,7 @@ body>* {
     font-size: 22px;
 }
 
-.entrada-texto {
+.text-input {
     width: 560px;
     height: 50px;
     border: 0;
@@ -48,7 +48,7 @@ body>* {
     background: #ffffff;
 }
 
-#boton-enviar {
+#submit-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,12 +58,12 @@ body>* {
     background: #0002e0;
 }
 
-#texto-ayuda {
+#help-text {
     margin-top: 22px;
     font-weight: 500;
 }
 
-#enlace-alternativo {
+#alternate-link {
     margin-top: 21px;
     font-size: 26px;
 }

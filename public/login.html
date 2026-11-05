@@ -10,48 +10,52 @@
     <link rel="stylesheet" href="css/login.css" />
   </head>
   <body>
-    <section id="tarjeta-formulario" class="panel-vidrio"></section>
-    <img id="fondo-ilustracion" src="assets/upbar.png" alt="" />
+    <section id="form-card" class="glass-panel"></section>
+    <img id="illustration-background" src="assets/upbar.png" alt="" />
     <img
-      id="ilustracion-chica"
+      id="girl-illustration"
       src="assets/illustracion-1.png"
       alt="Chica con audífonos y patineta"
     />
     <form
-      class="formulario-autenticacion"
-      id="formulario-inicio-sesion"
+      class="auth-form"
+      id="login-form"
       action="home-free.html"
       method="post"
     >
       <img
-        id="logo-formulario"
+        id="form-logo"
         src="assets/logo-blanco.png"
         alt="Logo de SoundNest"
       />
-      <h1 id="titulo-formulario">¡Que bueno verte de nuevo!</h1>
-      <label class="campo-formulario">
+      <h1 id="form-title">¡Que bueno verte de nuevo!</h1>
+      <label class="form-field">
         Correo Electrónico
         <input
-          class="entrada-texto"
+          class="text-input"
           name="correo"
           type="email"
           autocomplete="email"
           required
         />
       </label>
-      <label class="campo-formulario">
+      <label class="form-field">
         Contraseña
         <input
-          class="entrada-texto"
+          class="text-input"
           name="contrasena"
           type="password"
           autocomplete="current-password"
           required
         />
       </label>
-      <button id="boton-enviar" type="submit">Iniciar Sesión</button>
-      <p id="texto-ayuda">¿Sin cuenta aún?</p>
-      <a id="enlace-alternativo" href="register.html">Registro</a>
+      <button id="submit-button" type="submit">Iniciar Sesión</button>
+      <p id="help-text">¿Sin cuenta aún?</p>
+      <a id="alternate-link" href="register.html">Registro</a>
     </form>
+    <script src="js/sql.js"></script>
+    <script src="js/session-storage.js"></script>
+    <script src="js/user-interface.js"></script>
+    <script src="js/authentication.js"></script>
   </body>
 </html>

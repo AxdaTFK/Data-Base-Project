@@ -12,12 +12,12 @@ body {
     padding: 110px 113px;
 }
 
-#menu-lateral,
-#panel-contenido {
+#sidebar-menu,
+#content-panel {
     height: 788px;
 }
 
-#menu-lateral {
+#sidebar-menu {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,7 +25,7 @@ body {
     padding: 25px 22px;
 }
 
-.enlace-menu-lateral {
+.sidebar-menu-link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,38 +37,79 @@ body {
     font-size: 24px;
 }
 
-#enlace-administrador {
+#admin-link {
     font-size: 27px;
+    cursor: default;
 }
 
-.enlace-menu-lateral img {
+.sidebar-menu-link img {
     height: 50px;
 }
 
-#logo-menu-lateral {
+#sidebar-logo {
     width: 200px;
-    margin-top: 114px;
+    margin-top: 41px;
 }
 
-.boton-azul {
+#logout img {
+    display: block;
+    width: 52px;
+    transform: scaleX(-1);
+}
+
+.blue-button {
     display: flex;
     justify-content: center;
     align-items: center;
     background: #0002e0;
 }
 
-#barra-historial {
+#history-bar {
     display: flex;
     align-items: center;
-    gap: 25px;
     height: 46px;
-    padding: 0 34px;
+    padding: 0 14px;
     border-radius: 27px;
     background: rgba(90, 88, 96, 0.8);
-    font-size: 26px;
 }
 
-.tarjeta-usuario {
+.users-search {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.users-search input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 0 12px;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: #ffffff;
+    font: 22px "Iosevka", sans-serif;
+}
+
+.users-search button {
+    display: grid;
+    place-items: center;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: transparent;
+}
+
+.users-search button img {
+    width: 44px;
+    height: 44px;
+}
+
+.user-card {
     display: flex;
     align-items: center;
     gap: 16px;
@@ -78,9 +119,26 @@ body {
     font: 700 13px "Roboto";
 }
 
-.foto-usuario {
+.user-photo {
     align-self: stretch;
+    display: grid;
+    place-items: center;
     width: 84px;
     border-radius: 3px;
-    background: #999999;
+    background: #484848;
+}
+
+.user-photo img {
+    height: 62px;
+}
+
+.user-photo img[src$="logo-blanco.png"] {
+    opacity: 0.75;
+}
+
+.empty-list-message {
+    grid-column: 1 / -1;
+    padding: 22px;
+    color: #dedede;
+    font: 18px "Roboto", sans-serif;
 }

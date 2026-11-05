@@ -3,52 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1920" />
+    <link rel="icon" type="image/x-icon" href="./assets/LogoPremium.png" />
     <title>SoundNest - Planes</title>
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/plans.css" />
   </head>
   <body>
-    <section id="plan-free" class="tarjeta-plan">
-      <h2 class="nombre-plan">Free</h2>
-      <p id="estado-free" class="estado-plan">(Actual)</p>
-      <ul class="lista-beneficios">
-        <li class="beneficio">
-          <img class="icono-beneficio" src="assets/check-plan.svg" alt="" />
+    <section id="plan-free" class="plan-card">
+      <h2 class="plan-name">Free</h2>
+      <p id="free-status" class="plan-status">(Actual)</p>
+      <ul class="benefits-list">
+        <li class="benefit">
+          <img class="benefit-icon" src="assets/check-plan.svg" alt="" />
           <span>Número de canciones limitado por dia</span>
         </li>
-        <li class="beneficio">
-          <img class="icono-beneficio" src="assets/check-plan.svg" alt="" />
+        <li class="benefit">
+          <img class="benefit-icon" src="assets/check-plan.svg" alt="" />
           <span>MÁS anuncios</span>
         </li>
-        <li class="beneficio">
-          <img class="icono-beneficio" src="assets/check-plan.svg" alt="" />
+        <li class="benefit">
+          <img class="benefit-icon" src="assets/check-plan.svg" alt="" />
           <span>Saltos de canciones limitados</span>
         </li>
       </ul>
-      <button class="boton-plan" type="button">Costo $0</button>
+      <button class="plan-button" type="button">Costo $0</button>
     </section>
 
-    <section id="plan-premium" class="tarjeta-plan">
-      <h2 class="nombre-plan">Premium</h2>
-      <p id="estado-premium" class="estado-plan">(Recomendado)</p>
-      <ul class="lista-beneficios">
-        <li class="beneficio">
-          <img class="icono-beneficio" src="assets/check-plan.svg" alt="" />
+    <section id="plan-premium" class="plan-card">
+      <h2 class="plan-name">Premium</h2>
+      <p id="premium-status" class="plan-status">(Recomendado)</p>
+      <ul class="benefits-list">
+        <li class="benefit">
+          <img class="benefit-icon" src="assets/check-plan.svg" alt="" />
           <span>Sin limites de canciones por dia</span>
         </li>
-        <li class="beneficio">
-          <img class="icono-beneficio" src="assets/check-plan.svg" alt="" />
+        <li class="benefit">
+          <img class="benefit-icon" src="assets/check-plan.svg" alt="" />
           <span>SIN anuncios</span>
         </li>
-        <li class="beneficio">
-          <img class="icono-beneficio" src="assets/check-plan.svg" alt="" />
+        <li class="benefit">
+          <img class="benefit-icon" src="assets/check-plan.svg" alt="" />
           <span>Saltos de canciones ilimitados</span>
         </li>
       </ul>
-      <button class="boton-plan" type="button">Costo $29.990</button>
-      <p id="nota-terminos">
+      <button class="plan-button" type="button">Costo $29.990</button>
+      <p id="terms-note">
         Sujeta a los <em>Términos y Condiciones</em> del plan de SoundNest
       </p>
     </section>
+    <script src="js/sql.js"></script>
+    <script src="js/session-storage.js"></script>
+    <script src="js/user-interface.js"></script>
+    <script src="js/subscription-plans.js"></script>
   </body>
 </html>

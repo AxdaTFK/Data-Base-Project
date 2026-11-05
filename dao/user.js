@@ -32,6 +32,7 @@ const create = async (req, res) => {
     );
     res.status(201).json({ iduser: result.insertId, is_admin, name, email, suscription_idsuscription });
   } catch (err) {
+    if (err.code === 'ER_DUP_ENTRY') return res.status(400).json({ error: 'Correo ya registrado' });
     res.status(500).json({ error: err.message });
   }
 };
@@ -39,17 +40,26 @@ const update = async (req, res) => {
   try {
     const { name, email, password, suscription_idsuscription } = req.body;
     const is_admin = req.body.is_admin ? 1 : 0;
-    if (!name || !email || !password || !suscription_idsuscription) {
+    if (!name || !email || !suscription_idsuscription) {
       return res.status(400).json({ error: 'Bad Request' });
     }
-    const password_hash = await bcrypt.hash(password, 10);
-    const [result] = await db.query(
-      'UPDATE user SET is_admin = ?, name = ?, email = ?, password_hash = ?, suscription_idsuscription = ? WHERE iduser = ?',
-      [is_admin, name, email, password_hash, suscription_idsuscription, req.params.id]
-    );
+    let result;
+    if (password) {
+      const password_hash = await bcrypt.hash(password, 10);
+      [result] = await db.query(
+        'UPDATE user SET is_admin = ?, name = ?, email = ?, password_hash = ?, suscription_idsuscription = ? WHERE iduser = ?',
+        [is_admin, name, email, password_hash, suscription_idsuscription, req.params.id]
+      );
+    } else {
+      [result] = await db.query(
+        'UPDATE user SET is_admin = ?, name = ?, email = ?, suscription_idsuscription = ? WHERE iduser = ?',
+        [is_admin, name, email, suscription_idsuscription, req.params.id]
+      );
+    }
     if (result.affectedRows === 0) return res.status(404).json({ error: 'No encontrado' });
     res.json({ iduser: Number(req.params.id), is_admin, name, email, suscription_idsuscription });
   } catch (err) {
+    if (err.code === 'ER_DUP_ENTRY') return res.status(400).json({ error: 'Correo ya registrado' });
     res.status(500).json({ error: err.message });
   }
 };

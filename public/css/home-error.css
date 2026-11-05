@@ -1,4 +1,16 @@
-.portada-cancion {
+.song-cover {
     display: grid;
     place-items: center;
+}
+
+.song:nth-child(4n + 1) .song-cover,
+.song:nth-child(4n + 2) .song-cover,
+.song:nth-child(4n + 3) .song-cover,
+.song:nth-child(4n + 4) .song-cover {
+    background: #dddddd;
+}
+
+.song-cover img {
+    width: 55px;
+    margin: 1px;
 }

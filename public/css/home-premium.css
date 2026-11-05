@@ -1,12 +1,66 @@
-#banner-imagen-premium {
+#premium-banner-image {
     position: absolute;
-    top: 0;
-    left: 100px;
-    width: 881px;
+    right: 20px;
+    bottom: 0;
+    width: 52%;
+    height: 100%;
+    object-fit: contain;
+    object-position: right center;
+    zoom: 1;
 }
 
-@media (max-width: 1500px) {
-    #banner-imagen-premium {
-        zoom: 0.62;
+#premium-expiration-message {
+    position: absolute;
+    top: 50%;
+    left: 42px;
+    z-index: 1;
+    width: 42%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font: 700 clamp(22px, 2vw, 32px) / 1.25 "Iosevka", sans-serif;
+    zoom: 1;
+}
+
+#banner-expiration-date {
+    color: #ffe169;
+}
+
+@media (max-width: 1200px) {
+    #premium-banner-image {
+        right: 8px;
+        width: 48%;
+    }
+
+    #premium-expiration-message {
+        left: 24px;
+        width: 45%;
+        font-size: 22px;
     }
 }
+
+@media (max-width: 1100px) {
+    #premium-banner-image {
+        right: -104px;
+        transform: scale(1.7);
+        transform-origin: right top;
+    }
+
+    #premium-expiration-message {
+        display: none;
+    }
+}
+
+.song-cover {
+    display: grid;
+    place-items: center;
+}
+
+.song-cover img {
+    width: 42px;
+    margin: 0;
+}
+
+.song:nth-child(4n + 1) .song-cover { background: #16aff6; }
+.song:nth-child(4n + 2) .song-cover { background: #7e16f6; }
+.song:nth-child(4n + 3) .song-cover { background: #1621f6; }
+.song:nth-child(4n + 4) .song-cover { background: #f68616; }

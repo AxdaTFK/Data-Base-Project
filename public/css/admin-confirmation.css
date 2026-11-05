@@ -1,4 +1,4 @@
-#superposicion-confirmacion {
+#confirmation-overlay {
     position: absolute;
     inset: 0;
     display: flex;
@@ -8,18 +8,18 @@
     background: rgba(0, 0, 0, 0.62);
 }
 
-#superposicion-confirmacion img {
+#confirmation-overlay img {
     width: 163px;
 }
 
-#mensaje-confirmacion {
+#confirmation-message {
     margin-top: 24px;
     font-size: 70px;
     line-height: 1.2;
     text-align: center;
 }
 
-#boton-cerrar {
+#close-button {
     width: 456px;
     height: 95px;
     margin-top: 104px;

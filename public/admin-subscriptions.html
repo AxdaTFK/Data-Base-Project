@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920" />
+    <link rel="icon" type="image/x-icon" href="./assets/LogoPremium.png" />
+    <title>SoundNest - Suscripciones</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/admin-subscriptions.css" />
+  </head>
+  <body>
+    <nav id="sidebar-menu" class="glass-panel">
+      <button id="admin-link" class="sidebar-menu-link" type="button">Administrador</button>
+      <a class="sidebar-menu-link" href="admin-dashboard.html">
+        <img src="assets/analytics.png" alt="" />
+        Dashboard
+      </a>
+      <a class="sidebar-menu-link" href="admin-users.html">
+        <img src="assets/user.png" alt="" />
+        Usuarios
+      </a>
+      <a class="sidebar-menu-link" href="admin-subscriptions.html">
+        <img src="assets/combo-chart.png" alt="" />
+        Suscripciones
+      </a>
+      <img id="sidebar-logo" src="assets/logo.png" alt="SoundNest" />
+      <a id="logout" href="login.html" title="Cerrar sesión">
+        <img src="assets/Logout Rounded.png" alt="Cerrar sesión" />
+      </a>
+    </nav>
+    <main id="content-panel" class="glass-panel">
+      <div id="history-bar">
+        <form id="users-search-form" class="users-search">
+          <button type="submit" aria-label="Buscar">
+            <img src="assets/search-1.png" width="44" alt="" />
+          </button>
+          <input
+            id="users-search"
+            type="search"
+            placeholder="Buscar por nombre"
+            aria-label="Buscar suscriptor por nombre"
+          />
+        </form>
+      </div>
+      <div id="subscriptions-list"></div>
+    </main>
+    <script src="js/sql.js"></script>
+    <script src="js/session-storage.js"></script>
+    <script src="js/user-interface.js"></script>
+    <script src="js/admin-panel.js"></script>
+  </body>
+</html>

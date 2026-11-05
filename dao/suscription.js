@@ -19,21 +19,23 @@ const getById = async (req, res) => {
 };
 const create = async (req, res) => {
   try {
-    const { type } = req.body;
+    const { type, update_plan } = req.body;
     if (!type) return res.status(400).json({ error: 'Bad Request' });
-    const [result] = await db.query('INSERT INTO suscription (type) VALUES (?)', [type]);
-    res.status(201).json({ idsuscription: result.insertId, type });
+    const [result] = await db.query('INSERT INTO suscription (type, update_plan) VALUES (?, COALESCE(?, CURDATE()))', [type, update_plan || null]);
+    const [rows] = await db.query('SELECT * FROM suscription WHERE idsuscription = ?', [result.insertId]);
+    res.status(201).json(rows[0]);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 };
 const update = async (req, res) => {
   try {
-    const { type } = req.body;
+    const { type, update_plan } = req.body;
     if (!type) return res.status(400).json({ error: 'Bad Request' });
-    const [result] = await db.query('UPDATE suscription SET type = ? WHERE idsuscription = ?', [type, req.params.id]);
+    const [result] = await db.query('UPDATE suscription SET type = ?, update_plan = COALESCE(?, CURDATE()) WHERE idsuscription = ?', [type, update_plan || null, req.params.id]);
     if (result.affectedRows === 0) return res.status(404).json({ error: 'No encontrado' });
-    res.json({ idsuscription: Number(req.params.id), type });
+    const [rows] = await db.query('SELECT * FROM suscription WHERE idsuscription = ?', [req.params.id]);
+    res.json(rows[0]);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

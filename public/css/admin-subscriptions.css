@@ -1,0 +1,38 @@
+#content-panel {
+    padding: 30px 60px 0;
+}
+
+#subscriptions-list {
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    justify-content: space-between;
+    gap: 50px 0;
+    margin-top: 29px;
+}
+
+.subscription-card {
+    min-width: 0;
+}
+
+.subscription-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.subscription-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font: 700 13px "Roboto", sans-serif;
+}
+
+.subscription-expiration {
+    overflow: hidden;
+    color: #d8d5ff;
+    font: 700 12px "Roboto", sans-serif;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

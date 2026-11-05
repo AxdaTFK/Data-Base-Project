@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const mainRoutes = require('./routes/main.routes');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./env/swagger.config');
@@ -9,6 +10,7 @@ const port = 5000;
 // Base URL http://localhost:5000/main
 // Base URL http://localhost:5000/api-docs
 api.use(express.json());
+api.use(express.static("public"));
 api.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 api.use('/main', mainRoutes);
 

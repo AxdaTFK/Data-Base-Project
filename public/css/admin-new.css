@@ -1,18 +1,18 @@
-#panel-contenido {
+#content-panel {
     position: relative;
 }
 
-#panel-contenido>* {
+#content-panel>* {
     position: absolute;
 }
 
-#titulo-panel {
+#panel-title {
     top: 32px;
     left: 55px;
     font-size: 44px;
 }
 
-#zona-subida-archivo {
+#upload-area {
     top: 110px;
     left: 57px;
     display: flex;
@@ -26,31 +26,32 @@
     font-size: 22px;
 }
 
-#zona-subida-archivo img {
+#upload-area img {
     width: 88px;
 }
 
-#zona-subida-archivo span {
+#upload-area span {
     margin-top: -14px;
 }
 
-#vista-previa-portada {
+#cover-preview {
     top: 441px;
     left: 195px;
     width: 253px;
     height: 207px;
     border-radius: 21px;
     background: #5a5860;
+    cursor: pointer;
 }
 
-#vista-previa-portada img {
+#cover-preview img {
     position: absolute;
     top: 9px;
     right: 8px;
     width: 37px;
 }
 
-#formulario-contenido {
+#content-form {
     top: 110px;
     left: 632px;
     display: flex;
@@ -59,14 +60,14 @@
     width: 661px;
 }
 
-#formulario-contenido label {
+#content-form label {
     display: flex;
     flex-direction: column;
     gap: 13px;
     font-size: 26px;
 }
 
-#formulario-contenido input {
+#content-form input {
     height: 50px;
     padding: 0 22px;
     border: 0;
@@ -76,7 +77,7 @@
     font: 22px "Iosevka";
 }
 
-#boton-publicar-contenido {
+#publish-content-button {
     top: 693px;
     left: calc(50% - 175px);
     width: 350px;

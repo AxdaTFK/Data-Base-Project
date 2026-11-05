@@ -1,4 +1,4 @@
-#contenedor-ilustracion-astronauta {
+#astronaut-illustration-container {
     top: 121px;
     left: 129px;
     width: 750px;
@@ -7,40 +7,40 @@
     overflow: hidden;
 }
 
-#ilustracion-astronauta {
+#astronaut-illustration {
     position: absolute;
     top: 93px;
     left: -103px;
     width: 852px;
 }
 
-.formulario-autenticacion {
+.auth-form {
     top: 136px;
 }
 
-#titulo-formulario {
+#form-title {
     margin-top: 1px;
 }
 
-.campo-formulario {
+.form-field {
     margin-top: 22px;
 }
 
-#titulo-formulario+.campo-formulario {
+#form-title+.form-field {
     margin-top: 32px;
 }
 
-#requisitos-contrasena {
+#password-requirements {
     align-self: flex-start;
     margin: 32px 0 0 246px;
     font-size: 20px;
     line-height: 1.25;
 }
 
-#requisitos-contrasena ul {
+#password-requirements ul {
     margin-left: 30px;
 }
 
-#boton-enviar {
+#submit-button {
     margin-top: 33px;
 }
