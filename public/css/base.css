@@ -83,7 +83,7 @@ button {
     cursor: pointer;
 }
 
-.panel-vidrio {
+.glass-panel {
     border-radius: 27px;
     background: rgba(68, 63, 78, 0.8);
     backdrop-filter: blur(2px);

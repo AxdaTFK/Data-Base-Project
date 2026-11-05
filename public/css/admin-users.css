@@ -1,8 +1,8 @@
-#panel-contenido {
+#content-panel {
     padding: 18px 38px 0 43px;
 }
 
-#lista-usuarios {
+#users-list {
     display: grid;
     grid-template-columns: repeat(3, 350px);
     justify-content: space-between;

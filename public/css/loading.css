@@ -11,7 +11,7 @@ body {
     padding-top: 14px;
 }
 
-#mensaje-carga {
+#loading-message {
     margin-top: 9px;
     font-size: 35px;
     letter-spacing: -0.3px;

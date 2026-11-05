@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=1920" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="./assets/LogoPremium.png" />
     <title>SoundNest - Premium</title>
     <link rel="stylesheet" href="css/base.css" />
@@ -11,19 +11,20 @@
     <link rel="stylesheet" href="css/home-premium.css" />
   </head>
   <body>
-    <header id="barra-superior" class="panel-vidrio">
-      <a id="marca" href="index.html">
+    <header id="top-bar" class="glass-panel">
+      <a id="brand" href="index.html">
         <img src="assets/group-100.png" alt="Logo de SoundNest" />
-        <span id="plan-usuario">Premium</span>
+        <span id="user-plan">Premium</span>
+        <small id="plan-expiration">Vence el <span id="plan-expiration-value">--/--/----</span></small>
       </a>
-      <div id="buscador-central">
-        <a id="boton-inicio" href="home-free.html">
+      <div id="central-search">
+        <a id="home-button" href="home-free.html">
           <img src="assets/home-page.png" width="37" alt="Inicio" />
         </a>
-        <div id="campo-busqueda">
+        <div id="search-field">
           <img src="assets/search.png" width="35" alt="" />
           <input
-            id="buscador"
+            id="search-input"
             name="busqueda"
             type="search"
             aria-label="Buscar"
@@ -31,189 +32,197 @@
           <img src="assets/document-in-folder.png" width="30" alt="" />
         </div>
       </div>
-      <a id="avatar-usuario" href="login.html">
-        <img src="assets/ellipse-1.png" alt="Perfil del usuario" />
-      </a>
+      <div id="user-actions">
+        <span id="user-avatar" aria-hidden="true">
+          <img src="assets/ellipse-1.png" alt="" />
+        </span>
+        <a id="logout" href="login.html" title="Cerrar sesión">
+          <img src="assets/Logout Rounded.png" alt="Cerrar sesión" />
+        </a>
+      </div>
     </header>
-    <aside id="panel-biblioteca" class="panel-vidrio">
-      <div class="encabezado-panel">
+    <aside id="library-panel" class="glass-panel">
+      <div class="panel-heading">
         <img src="assets/music-library.png" width="38" alt="" />
         Tu librería
         <img
-          id="icono-buscar-biblioteca"
-          src="assets/search.png"
-          width="33"
-          alt="Buscar en la librería"
+          id="add-to-library-icon"
+          src="assets/plus-math.png"
+          width="30"
+          alt="Crear playlist"
         />
       </div>
-      <div id="filtros-biblioteca">
-        <span class="filtro-biblioteca">Álbumes</span>
-        <span class="filtro-biblioteca">Playlists</span>
-        <span class="filtro-biblioteca">Artistas</span>
+      <div id="library-filters">
+        <span class="library-filter">Álbumes</span>
+        <span class="library-filter">Playlists</span>
+        <span class="library-filter">Artistas</span>
       </div>
-      <div id="lista-biblioteca">
-        <div class="elemento-biblioteca">
-          <span class="icono-elemento">
+      <div id="library-list">
+        <div class="library-item">
+          <span class="item-icon">
             <img src="assets/heart.png" alt="" />
           </span>
-          <div class="texto-elemento">
-            <span class="nombre-elemento">Me gustan</span>
-            <span class="detalle-elemento">Playlists - 2 songs</span>
+          <div class="item-text">
+            <span class="item-name">Me gustan</span>
+            <span class="item-detail">Playlists - 2 songs</span>
           </div>
-          <img class="icono-fijar" src="assets/push-pin.png" alt="Fijar" />
+          <img class="pin-icon" src="assets/push-pin.png" alt="Fijar" />
         </div>
-        <div class="elemento-biblioteca">
-          <span class="icono-elemento">
+        <div class="library-item">
+          <span class="item-icon">
             <img src="assets/heart.png" alt="" />
           </span>
-          <div class="texto-elemento">
-            <span class="nombre-elemento">Los aviones</span>
-            <span class="detalle-elemento">Playlists - 2 songs</span>
+          <div class="item-text">
+            <span class="item-name">Los aviones</span>
+            <span class="item-detail">Playlists - 2 songs</span>
           </div>
-          <img class="icono-fijar" src="assets/push-pin.png" alt="Fijar" />
+          <img class="pin-icon" src="assets/push-pin.png" alt="Fijar" />
         </div>
-        <div class="elemento-biblioteca">
-          <span class="icono-elemento">
+        <div class="library-item">
+          <span class="item-icon">
             <img src="assets/heart.png" alt="" />
           </span>
-          <div class="texto-elemento">
-            <span class="nombre-elemento">Me gustas</span>
-            <span class="detalle-elemento">Playlists - 2 songs</span>
+          <div class="item-text">
+            <span class="item-name">Me gustas</span>
+            <span class="item-detail">Playlists - 2 songs</span>
           </div>
-          <img class="icono-fijar" src="assets/push-pin.png" alt="Fijar" />
+          <img class="pin-icon" src="assets/push-pin.png" alt="Fijar" />
         </div>
-        <div class="elemento-biblioteca">
-          <span class="icono-elemento">
+        <div class="library-item">
+          <span class="item-icon">
             <img src="assets/heart.png" alt="" />
           </span>
-          <div class="texto-elemento">
-            <span class="nombre-elemento">Tu</span>
-            <span class="detalle-elemento">Playlists - 2 songs</span>
+          <div class="item-text">
+            <span class="item-name">Tu</span>
+            <span class="item-detail">Playlists - 2 songs</span>
           </div>
-          <img class="icono-fijar" src="assets/push-pin.png" alt="Fijar" />
+          <img class="pin-icon" src="assets/push-pin.png" alt="Fijar" />
         </div>
-        <div class="elemento-biblioteca">
-          <span id="icono-elemento-album" class="icono-elemento">
+        <div class="library-item">
+          <span id="album-item-icon" class="item-icon">
             <img src="assets/earth-planet.png" alt="" />
           </span>
-          <div class="texto-elemento">
-            <span class="nombre-elemento">Name</span>
-            <span class="detalle-elemento">Album - 2 songs</span>
+          <div class="item-text">
+            <span class="item-name">Name</span>
+            <span class="item-detail">Album - 2 songs</span>
           </div>
-          <img class="icono-fijar" src="assets/push-pin.png" alt="Fijar" />
+          <img class="pin-icon" src="assets/push-pin.png" alt="Fijar" />
         </div>
-        <div class="elemento-biblioteca">
-          <span id="icono-elemento-perfil" class="icono-elemento">
+        <div class="library-item">
+          <span id="profile-item-icon" class="item-icon">
             <img src="assets/person.png" alt="" />
           </span>
-          <div class="texto-elemento">
-            <span class="nombre-elemento">Me gusta</span>
-            <span class="detalle-elemento">Playlists - 2 songs</span>
+          <div class="item-text">
+            <span class="item-name">Me gusta</span>
+            <span class="item-detail">Playlists - 2 songs</span>
           </div>
-          <img class="icono-fijar" src="assets/push-pin.png" alt="Fijar" />
+          <img class="pin-icon" src="assets/push-pin.png" alt="Fijar" />
         </div>
       </div>
     </aside>
-    <main id="panel-principal" class="panel-vidrio">
+    <main id="main-panel" class="glass-panel">
       <div id="banner">
         <img
-          id="banner-imagen-premium"
-          src="assets/banner_premium.png"
-          alt="Faltan 10 días para renovar tu plan"
+          id="premium-banner-image"
+          src="assets/Banner_premium_img.png"
+          alt="Ilustración de una persona disfrutando de la música"
         />
+        <p id="premium-expiration-message">
+          Tu plan Premium vence el <span id="banner-expiration-date">--/--/----</span>
+        </p>
       </div>
-      <ol id="lista-canciones">
-        <li class="cancion" data-identificador-cancion="1">
-          <span class="numero-cancion">1</span>
-          <span class="portada-cancion"></span>
-          <span class="titulo-cancion">Perfect</span>
-          <span class="artista-cancion">Ed Sheeran</span>
-          <span class="duracion-cancion">4:22</span>
-          <div class="acciones-cancion">
+      <ol id="song-list">
+        <li class="song" data-identificador-cancion="1">
+          <span class="song-number">1</span>
+          <span class="song-cover"><img src="assets/music.png" alt="" /></span>
+          <span class="song-title">Perfect</span>
+          <span class="song-artist">Ed Sheeran</span>
+          <span class="song-duration">4:22</span>
+          <div class="song-actions">
             <img
-              class="accion-favorito"
+              class="favorite-action"
               src="assets/favorite.png"
               alt="Favorito"
             />
             <img
-              class="accion-guardar"
+              class="save-action"
               src="assets/inspection.png"
               alt="Guardar"
             />
             <img
-              class="accion-mas-opciones"
+              class="more-options-action"
               src="assets/more.png"
               alt="Más opciones"
             />
           </div>
         </li>
-        <li class="cancion" data-identificador-cancion="2">
-          <span class="numero-cancion">2</span>
-          <span class="portada-cancion"></span>
-          <span class="titulo-cancion">I Love You</span>
-          <span class="artista-cancion">Fontaines D.C</span>
-          <span class="duracion-cancion">5:05</span>
-          <div class="acciones-cancion">
+        <li class="song" data-identificador-cancion="2">
+          <span class="song-number">2</span>
+          <span class="song-cover"><img src="assets/music.png" alt="" /></span>
+          <span class="song-title">I Love You</span>
+          <span class="song-artist">Fontaines D.C</span>
+          <span class="song-duration">5:05</span>
+          <div class="song-actions">
             <img
-              class="accion-favorito"
+              class="favorite-action"
               src="assets/favorite.png"
               alt="Favorito"
             />
             <img
-              class="accion-guardar"
+              class="save-action"
               src="assets/inspection.png"
               alt="Guardar"
             />
             <img
-              class="accion-mas-opciones"
+              class="more-options-action"
               src="assets/more.png"
               alt="Más opciones"
             />
           </div>
         </li>
-        <li class="cancion" data-identificador-cancion="3">
-          <span class="numero-cancion">3</span>
-          <span class="portada-cancion"></span>
-          <span class="titulo-cancion">Hysteria</span>
-          <span class="artista-cancion">Muse</span>
-          <span class="duracion-cancion">3:47</span>
-          <div class="acciones-cancion">
+        <li class="song" data-identificador-cancion="3">
+          <span class="song-number">3</span>
+          <span class="song-cover"><img src="assets/music.png" alt="" /></span>
+          <span class="song-title">Hysteria</span>
+          <span class="song-artist">Muse</span>
+          <span class="song-duration">3:47</span>
+          <div class="song-actions">
             <img
-              class="accion-favorito"
+              class="favorite-action"
               src="assets/favorite.png"
               alt="Favorito"
             />
             <img
-              class="accion-guardar"
+              class="save-action"
               src="assets/inspection.png"
               alt="Guardar"
             />
             <img
-              class="accion-mas-opciones"
+              class="more-options-action"
               src="assets/more.png"
               alt="Más opciones"
             />
           </div>
         </li>
-        <li class="cancion" data-identificador-cancion="4">
-          <span class="numero-cancion">4</span>
-          <span class="portada-cancion"></span>
-          <span class="titulo-cancion">Dracula</span>
-          <span class="artista-cancion">Tame Impala</span>
-          <span class="duracion-cancion">3:25</span>
-          <div class="acciones-cancion">
+        <li class="song" data-identificador-cancion="4">
+          <span class="song-number">4</span>
+          <span class="song-cover"><img src="assets/music.png" alt="" /></span>
+          <span class="song-title">Dracula</span>
+          <span class="song-artist">Tame Impala</span>
+          <span class="song-duration">3:25</span>
+          <div class="song-actions">
             <img
-              class="accion-favorito"
+              class="favorite-action"
               src="assets/favorite.png"
               alt="Favorito"
             />
             <img
-              class="accion-guardar"
+              class="save-action"
               src="assets/inspection.png"
               alt="Guardar"
             />
             <img
-              class="accion-mas-opciones"
+              class="more-options-action"
               src="assets/more.png"
               alt="Más opciones"
             />
@@ -221,80 +230,80 @@
         </li>
       </ol>
     </main>
-    <aside id="panel-estadisticas" class="panel-vidrio">
-      <div class="encabezado-panel">
+    <aside id="statistics-panel" class="glass-panel">
+      <div class="panel-heading">
         <img src="assets/combo-chart.png" width="38" alt="" />
         Estadísticas
       </div>
-      <div id="lista-estadisticas">
-        <div class="tarjeta-estadistica tarjeta-estadistica-barra">
-          <span class="titulo-tarjeta">XXX días</span>
-          <span class="descripcion-tarjeta">¡No te detengas!</span>
-          <span class="dias-semana">L Ma Mi J V S D</span>
-          <div class="barra-semanal">
-            <span class="barra-semanal-relleno"></span>
+      <div id="statistics-list">
+        <div class="statistic-card statistic-bar-card">
+          <span class="card-title">XXX días</span>
+          <span class="card-description">¡No te detengas!</span>
+          <span class="weekdays">L Ma Mi J V S D</span>
+          <div class="weekly-bar">
+            <span class="weekly-bar-fill"></span>
           </div>
         </div>
-        <div class="tarjeta-estadistica tarjeta-estadistica-barra">
-          <span class="titulo-tarjeta">XXX minutos</span>
-          <span class="descripcion-tarjeta"
+        <div class="statistic-card statistic-bar-card">
+          <span class="card-title">XXX minutos</span>
+          <span class="card-description"
             >El último mes escuchaste 5.200 minutos</span
           >
-          <span class="dias-semana">L Ma Mi J V S D</span>
-          <div class="barra-semanal">
-            <span class="barra-semanal-relleno"></span>
+          <span class="weekdays">L Ma Mi J V S D</span>
+          <div class="weekly-bar">
+            <span class="weekly-bar-fill"></span>
           </div>
         </div>
-        <div class="tarjeta-estadistica tarjeta-estadistica-dato">
-          <span class="titulo-tarjeta">Franja más escuchada</span>
-          <span class="descripcion-tarjeta">Wow, ¡¡eres genial!!</span>
-          <div class="recuadro-dato">
+        <div class="statistic-card statistic-data-card">
+          <span class="card-title">Franja más escuchada</span>
+          <span class="card-description">Wow, ¡¡eres genial!!</span>
+          <div class="data-box">
             8:00pm<br />
             10:00pm
           </div>
         </div>
-        <div class="tarjeta-estadistica tarjeta-estadistica-dato">
-          <span class="titulo-tarjeta">Género más escuchado</span>
-          <span class="descripcion-tarjeta">Wow, ¡¡eres genial!!</span>
-          <div class="recuadro-dato">
+        <div class="statistic-card statistic-data-card">
+          <span class="card-title">Género más escuchado</span>
+          <span class="card-description">Wow, ¡¡eres genial!!</span>
+          <div class="data-box">
             <img src="assets/music.png" alt="" />
           </div>
         </div>
-        <div class="tarjeta-estadistica tarjeta-estadistica-dato">
-          <span class="titulo-tarjeta">Artista más escuchado</span>
-          <span class="descripcion-tarjeta">Wow, ¡¡eres genial!!</span>
-          <div class="recuadro-dato">
+        <div class="statistic-card statistic-data-card">
+          <span class="card-title">Artista más escuchado</span>
+          <span class="card-description">Wow, ¡¡eres genial!!</span>
+          <div class="data-box">
             <img src="assets/music.png" alt="" />
           </div>
         </div>
       </div>
     </aside>
-    <footer class="panel-vidrio barra-reproductor" id="reproductor">
-      <div class="cancion-actual" id="informacion-cancion">
-        <span id="portada-cancion-actual"></span>
+    <footer class="glass-panel player-bar" id="player">
+      <div class="current-song" id="song-info">
+        <span id="current-song-cover"></span>
         <div>
           Nombre<br />
           Artista - Álbum
         </div>
       </div>
-      <div id="controles-reproduccion">
-        <nav id="botones-reproduccion">
+      <div id="playback-controls">
+        <nav id="playback-buttons">
           <img
-            id="boton-aleatorio"
+            id="shuffle-button"
             src="assets/shuffle.png"
             alt="Aleatorio"
           />
-          <img id="boton-anterior" src="assets/end.png" alt="Anterior" />
+          <img id="previous-button" src="assets/end.png" alt="Anterior" />
           <img
-            id="boton-reproducir"
+            id="play-button"
             src="assets/play-button.png"
             alt="Reproducir"
           />
-          <img id="boton-siguiente" src="assets/end-1.png" alt="Siguiente" />
-          <img id="boton-repetir" src="assets/group-70.png" alt="Repetir" />
+          <img id="next-button" src="assets/end-1.png" alt="Siguiente" />
+          <img id="repeat-button" src="assets/group-70.png" alt="Repetir" />
         </nav>
         <input
-          id="control-progreso"
+          id="progress-control"
           type="range"
           min="0"
           max="253"
@@ -307,16 +316,16 @@
             )
           "
         />
-        <div id="tiempos-reproduccion">
-          <span id="tiempo-actual">0:04</span>
-          <span id="tiempo-restante">-4:13</span>
+        <div id="playback-times">
+          <span id="current-time">0:04</span>
+          <span id="remaining-time">-4:13</span>
         </div>
       </div>
-      <div id="controles-volumen">
-        <img id="icono-me-gusta" src="assets/heart.png" alt="Me gusta" />
-        <img id="icono-volumen" src="assets/speaker.png" alt="Volumen" />
+      <div id="volume-controls">
+        <img id="like-icon" src="assets/heart.png" alt="Me gusta" />
+        <img id="volume-icon" src="assets/speaker.png" alt="Volumen" />
         <input
-          id="control-volumen"
+          id="volume-control"
           type="range"
           min="0"
           max="100"
@@ -331,5 +340,11 @@
         />
       </div>
     </footer>
+    <script src="js/sql.js"></script>
+    <script src="js/session-storage.js"></script>
+    <script src="js/user-interface.js"></script>
+    <script src="js/playlist-menu.js"></script>
+    <script src="js/music-player.js"></script>
+    <script src="js/subscription-plans.js"></script>
   </body>
 </html>

@@ -1,25 +1,25 @@
-#ilustracion-chica {
+#girl-illustration {
     top: 177px;
     left: 129px;
     width: 778px;
 }
 
-.formulario-autenticacion {
+.auth-form {
     top: 158px;
 }
 
-#titulo-formulario {
+#form-title {
     margin-top: 2px;
 }
 
-.campo-formulario {
+.form-field {
     margin-top: 21px;
 }
 
-#titulo-formulario+.campo-formulario {
+#form-title+.form-field {
     margin-top: 40px;
 }
 
-#boton-enviar {
+#submit-button {
     margin-top: 61px;
 }

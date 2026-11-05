@@ -4,35 +4,35 @@ body {
     gap: 34px 38px;
 }
 
-#barra-superior,
-.barra-reproductor {
+#top-bar,
+.player-bar {
     grid-column: 1 / 3;
 }
 
-#columna-izquierda {
+#left-column {
     display: flex;
     flex-direction: column;
     gap: 35px;
 }
 
-.panel-lateral {
+.side-panel {
     border-radius: 21px;
     background: rgba(68, 63, 78, 0.7);
 }
 
-#panel-cancion-actual {
+#current-song-panel {
     position: relative;
     height: 198px;
 }
 
-#panel-cancion-actual img {
+#current-song-panel img {
     position: absolute;
     top: 78px;
     right: 0;
     width: 48px;
 }
 
-#panel-cola-reproduccion {
+#playback-queue-panel {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -40,7 +40,7 @@ body {
     padding: 14px 30px 14px 28px;
 }
 
-.elemento-cola {
+.queue-item {
     display: flex;
     flex: 1;
     justify-content: space-between;
@@ -50,67 +50,68 @@ body {
     background: rgba(83, 77, 96, 0.74);
 }
 
-.portada-elemento-cola {
+.queue-item-cover {
     width: 59px;
     height: 51px;
     border-radius: 11px;
-    background: #d9d9d9;
+    background: #57dee2;
 }
 
-.elemento-cola img {
+.queue-item img {
     width: 48px;
 }
 
-.opcion-adicional {
+.additional-option {
     position: absolute;
     left: 1331px;
     display: flex;
     align-items: center;
     gap: 17px;
     font-size: 18px;
+    z-index: 1;
 }
 
-.opcion-adicional img {
+.additional-option img {
     width: 22px;
 }
 
-#opcion-etiquetas {
+#tags-option {
     top: 553px;
 }
 
-#opcion-reproducciones {
+#play-count-option {
     top: 586px;
 }
 
-#panel-resena {
+#review-panel {
     position: relative;
     background: rgba(50, 46, 57, 0.76);
     font-weight: 400;
 }
 
-#datos-cancion {
+#song-details {
     position: absolute;
     top: 32px;
     left: 57px;
     font-size: 26px;
 }
 
-#datos-cancion p {
+#song-details p {
     margin-bottom: 34px;
 }
 
-#datos-cancion #nombre-artista {
+#song-details #artist-name {
     font-family: "Inter";
 }
 
-#calificacion {
+#rating {
     display: block;
     margin-top: -12px;
     font-size: 70px;
     line-height: 90px;
 }
 
-#boton-agregar-playlist {
+#add-to-playlist-button {
     position: absolute;
     top: 32px;
     right: 60px;
@@ -125,11 +126,11 @@ body {
     font-size: 22px;
 }
 
-#boton-agregar-playlist img {
+#add-to-playlist-button img {
     width: 44px;
 }
 
-#formulario-resena {
+#review-form {
     position: absolute;
     top: 331px;
     right: 57px;
@@ -142,30 +143,30 @@ body {
     background: rgba(77, 71, 88, 0.82);
 }
 
-#portada-resena,
-#formulario-resena textarea {
+#review-cover,
+#review-form textarea {
     border-radius: 21px;
     background: rgba(105, 97, 120, 0.82);
 }
 
-#portada-resena {
+#review-cover {
     flex: none;
     width: 187px;
     height: 187px;
 }
 
-#contenido-resena {
+#review-content {
     display: flex;
     flex: 1;
     flex-direction: column;
     gap: 20px;
 }
 
-#titulo-resena {
+#review-title {
     font: 400 26px "Iosevka";
 }
 
-#formulario-resena textarea {
+#review-form textarea {
     height: 132px;
     padding: 16px;
     border: 0;
@@ -174,11 +175,11 @@ body {
     font: 22px "Inter";
 }
 
-#formulario-resena textarea::placeholder {
+#review-form textarea::placeholder {
     color: rgba(255, 255, 255, 0.6);
 }
 
-#boton-publicar-resena {
+#publish-review-button {
     position: absolute;
     top: 529px;
     right: 147px;
@@ -190,4 +191,124 @@ body {
     border-radius: 27px;
     background: #4700e0;
     font: 700 26px "Iosevka";
+}
+
+#current-song-panel {
+    background-image: url("../assets/Imagen album.png");
+    background-size: calc(100% - 26px) calc(100% - 22px);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#review-cover {
+    background-image: url("../assets/Imagen album.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.additional-option {
+    cursor: pointer;
+}
+
+.additional-option.disabled-option img {
+    opacity: 0.3;
+}
+
+button.additional-option {
+    padding: 0;
+    border: 0;
+    background: none;
+    text-align: left;
+}
+
+#review-tags-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: min(560px, calc(100vw - 32px));
+    max-height: calc(100vh - 32px);
+    margin: 0;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 27px;
+    background: rgba(68, 63, 78, 0.97);
+    color: #ffffff;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    transform: translate(-50%, -50%);
+}
+
+#review-tags-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+}
+
+.review-tags-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px;
+    font-family: "Iosevka", sans-serif;
+}
+
+#review-tags-title {
+    font-size: 30px;
+    text-align: center;
+}
+
+.review-tags-content p {
+    font: 16px "Inter", sans-serif;
+    text-align: center;
+}
+
+.review-tags-content label {
+    margin-top: 8px;
+}
+
+#review-tag-input {
+    width: 100%;
+    height: 50px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 25px;
+    outline-color: #7e16f6;
+    background: #ffffff;
+    color: #222222;
+    font: 18px "Inter", sans-serif;
+}
+
+.review-tags-actions {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.review-tags-actions button {
+    min-width: 112px;
+    min-height: 46px;
+    padding: 0 16px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.18);
+    font-size: 16px;
+}
+
+#save-review-tag {
+    background: #4700e0;
+}
+
+#remove-review-tag {
+    margin-right: auto;
+    background: rgba(192, 57, 43, 0.85);
+}
+
+@media (max-width: 600px) {
+    .review-tags-content {
+        padding: 24px;
+    }
+
+    .review-tags-actions button {
+        flex: 1 1 100%;
+    }
 }

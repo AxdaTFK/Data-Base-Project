@@ -8,7 +8,7 @@ body>* {
     position: absolute;
 }
 
-.tarjeta-plan {
+.plan-card {
     top: 131px;
     width: 555px;
     height: 818px;
@@ -24,11 +24,11 @@ body>* {
     left: 1032px;
 }
 
-.tarjeta-plan>* {
+.plan-card>* {
     position: absolute;
 }
 
-.nombre-plan {
+.plan-name {
     top: 51px;
     left: 0;
     width: 100%;
@@ -38,7 +38,7 @@ body>* {
     text-align: center;
 }
 
-.estado-plan {
+.plan-status {
     top: 123px;
     left: 0;
     width: 100%;
@@ -48,18 +48,18 @@ body>* {
     text-align: center;
 }
 
-#estado-premium {
+#premium-status {
     color: #9564ff;
 }
 
-.lista-beneficios {
+.benefits-list {
     top: 196px;
     left: 51px;
     width: 473px;
     list-style: none;
 }
 
-.beneficio {
+.benefit {
     display: flex;
     align-items: flex-start;
     gap: 15px;
@@ -67,26 +67,26 @@ body>* {
     line-height: 39px;
 }
 
-.beneficio+.beneficio {
+.benefit+.benefit {
     margin-top: 17px;
 }
 
-.beneficio+.beneficio+.beneficio {
+.benefit+.benefit+.benefit {
     margin-top: 21px;
 }
 
-.icono-beneficio {
+.benefit-icon {
     flex: none;
     width: 38px;
     height: 38px;
     margin-top: 3px;
 }
 
-.beneficio span {
+.benefit span {
     max-width: 420px;
 }
 
-.boton-plan {
+.plan-button {
     top: 563px;
     left: 62px;
     display: flex;
@@ -99,7 +99,7 @@ body>* {
     font-size: 50px;
 }
 
-#nota-terminos {
+#terms-note {
     top: 675px;
     left: 62px;
     width: 431px;
@@ -108,6 +108,6 @@ body>* {
     text-align: center;
 }
 
-#nota-terminos em {
+#terms-note em {
     font-weight: 400;
 }

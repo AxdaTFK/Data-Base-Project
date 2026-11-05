@@ -1,10 +1,10 @@
-#banner-imagen-anuncio,
+#ad-banner-image,
 #banner-logo,
-#banner-etiqueta-premium {
+#premium-banner-label {
     position: absolute;
 }
 
-#banner-imagen-anuncio {
+#ad-banner-image {
     top: -12px;
     left: -17px;
     width: 768px;
@@ -23,10 +23,25 @@
     margin: 0 auto -4px;
 }
 
-#banner-etiqueta-premium {
+#premium-banner-label {
     top: 146px;
     right: 47px;
     font-size: 43px;
     color: #0002e0;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.267);
 }
+
+.song-cover {
+    display: grid;
+    place-items: center;
+}
+
+.song-cover img {
+    width: 42px;
+    margin: 0;
+}
+
+.song:nth-child(4n + 1) .song-cover { background: #16aff6; }
+.song:nth-child(4n + 2) .song-cover { background: #2116f6; }
+.song:nth-child(4n + 3) .song-cover { background: #f616e0; }
+.song:nth-child(4n + 4) .song-cover { background: #b3bc0e; }
