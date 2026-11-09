@@ -1,8 +1,8 @@
 const config = {
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'soundnest',
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASSWORD || 'root',
+    database: process.env.DB_NAME || 'soundnest',
     waitForConnections: true,
     connectionLimit: 5
 };

@@ -81,8 +81,10 @@ const login = async (req, res) => {
       [email]
     );
     if (!rows[0]) return res.status(401).json({ error: 'Credenciales inválidas' });
-    const coincide = await bcrypt.compare(password, rows[0].password_hash);
-    if (!coincide) return res.status(401).json({ error: 'Credenciales inválidas' });
+    
+    const isPasswordValid = await bcrypt.compare(password, rows[0].password_hash);
+    if (!isPasswordValid) return res.status(401).json({ error: 'Credenciales inválidas' });
+    
     const { password_hash, ...user } = rows[0];
     res.json({ message: 'Inicio de sesión exitoso', user });
   } catch (err) {
