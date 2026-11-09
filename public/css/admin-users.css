@@ -1,4 +1,6 @@
 #content-panel {
+    display: flex;
+    flex-direction: column;
     padding: 18px 38px 0 43px;
 }
 
@@ -6,6 +8,12 @@
     display: grid;
     grid-template-columns: repeat(3, 350px);
     justify-content: space-between;
-    gap: 37px 0;
+    align-content: start;
+    gap: 30px 0;
     margin-top: 47px;
+    padding-bottom: 20px;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: none;
 }

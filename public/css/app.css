@@ -100,8 +100,8 @@ body {
 
 #plan-expiration {
     position: absolute;
-    left: 95px;
-    bottom: 12px;
+    left: 78px;
+    bottom: 10px;
     font-size: 15px;
     font-weight: 700;
     text-shadow: none;
@@ -205,7 +205,7 @@ body {
 }
 
 #statistics-list {
-    padding: 0 18px 12px;
+    padding: 14px 18px 12px;
 }
 
 #statistics-list> :last-child {

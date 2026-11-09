@@ -1,3 +1,19 @@
+#banner {
+    position: relative;
+    overflow: hidden;
+}
+
+#banner img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 154%;
+    width: auto;
+    max-width: none;
+    transform: translateX(12.7%);
+    clip-path: inset(0 0 35% 0);
+}
+
 #premium-banner-image {
     position: absolute;
     right: 20px;
@@ -64,3 +80,4 @@
 .song:nth-child(4n + 2) .song-cover { background: #7e16f6; }
 .song:nth-child(4n + 3) .song-cover { background: #1621f6; }
 .song:nth-child(4n + 4) .song-cover { background: #f68616; }
+
