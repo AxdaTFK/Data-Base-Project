@@ -354,10 +354,11 @@ body {
     display: flex;
     justify-content: space-between;
     font: 400 20px "Roboto";
+    margin-top: -6px;
 }
 
 #remaining-time {
-    font-size: 11px;
+    font-size: 20px;
     color: #b3b3b3;
 }
 

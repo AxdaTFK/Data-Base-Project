@@ -12,6 +12,9 @@ const progressBar = document.getElementById('progress-control');
 const volumeBar = document.getElementById('volume-control');
 const currentTimeLabel = document.getElementById('current-time');
 const remainingTimeLabel = document.getElementById('remaining-time');
+const audioPlayer = new Audio();
+audioPlayer.preload = 'none';
+audioPlayer.volume = volumeBar ? Number(volumeBar.value) / 100 : 0.5;
 
 let allSongs = [];
 let visibleSongs = [];
@@ -165,7 +168,6 @@ async function loadHome(user) {
     }
 }
 
-let playTimer = null;
 let elapsedSeconds = 0;
 let isPlaying = false;
 let isShuffle = false;
@@ -203,32 +205,26 @@ function updateProgress() {
     if (remainingTimeLabel) remainingTimeLabel.textContent = '-' + formatDuration(duration - elapsedSeconds);
 }
 
-function stopTimer() {
-    clearInterval(playTimer);
-    playTimer = null;
+function updatePlayButton() {
+    if (!playButton) return;
+
+    playButton.src = isPlaying ? 'assets/pause-button.png' : 'assets/play-button.png';
+    playButton.alt = isPlaying ? 'Pausar' : 'Reproducir';
 }
 
-function startTimer() {
-    stopTimer();
-    if (visibleSongs.length === 0) return;
-
-    playTimer = setInterval(function () {
-        elapsedSeconds++;
-
-        if (elapsedSeconds < Number(progressBar.max)) {
-            updateProgress();
-        } else if (isRepeat) {
-            elapsedSeconds = 0;
-            addPlay(playingSongId);
-            updateProgress();
-        } else {
-            changeSong(1);
-        }
-    }, 1000);
+function playAudio() {
+    audioPlayer.play().catch(function (error) {
+        if (error.name === 'AbortError' || audioPlayer.error) return;
+        console.error('Error playing audio:', error);
+        showMessage('No se pudo reproducir esta canción.', true);
+    });
 }
 
 function selectSong(index) {
     if (visibleSongs.length === 0) return;
+
+    const resumePlayback = isPlaying;
+    audioPlayer.pause();
 
     const position = (index + visibleSongs.length) % visibleSongs.length;
     const song = visibleSongs[position];
@@ -240,10 +236,17 @@ function selectSong(index) {
         playerText.append(song.name, document.createElement('br'), getArtistName(song) + ' - ' + (song.album || 'Sin álbum'));
     }
 
+    audioPlayer.src = `${API_URL}/songs/${song.idsong}/audio`;
+    audioPlayer.load();
     if (progressBar) progressBar.max = song.duration;
     elapsedSeconds = 0;
     updateProgress();
     highlightPlayingSong();
+
+    if (resumePlayback) {
+        addPlay(playingSongId);
+        playAudio();
+    }
 }
 
 function changeSong(step) {
@@ -256,25 +259,45 @@ function changeSong(step) {
     }
 
     selectSong(position);
-
-    if (isPlaying) {
-        addPlay(playingSongId);
-        startTimer();
-    }
 }
 
 function togglePlay() {
-    isPlaying = !isPlaying;
-    playButton.src = isPlaying ? 'assets/pause-button.png' : 'assets/play-button.png';
-    playButton.alt = isPlaying ? 'Pausar' : 'Reproducir';
-
-    if (isPlaying) {
+    if (audioPlayer.paused) {
         addPlay(getPlayingSongForPlays());
-        startTimer();
+        playAudio();
     } else {
-        stopTimer();
+        audioPlayer.pause();
     }
 }
+
+audioPlayer.addEventListener('play', function () {
+    isPlaying = true;
+    updatePlayButton();
+});
+
+audioPlayer.addEventListener('pause', function () {
+    isPlaying = false;
+    updatePlayButton();
+});
+
+audioPlayer.addEventListener('timeupdate', function () {
+    elapsedSeconds = Math.floor(audioPlayer.currentTime);
+    if (progressBar && Number.isFinite(audioPlayer.duration)) {
+        progressBar.max = Math.ceil(audioPlayer.duration);
+    }
+    updateProgress();
+});
+
+audioPlayer.addEventListener('ended', function () {
+    if (!isRepeat) changeSong(1);
+});
+
+audioPlayer.addEventListener('error', function () {
+    if (!audioPlayer.src) return;
+    isPlaying = false;
+    updatePlayButton();
+    showMessage('No hay audio cargado para esta canción.', true);
+});
 
 function toggleModeButton(button, isActive) {
     button.style.filter = isActive ? 'drop-shadow(0 0 6px #b266ff)' : '';
@@ -306,6 +329,7 @@ if (shuffleButton) {
 if (repeatButton) {
     repeatButton.addEventListener('click', function () {
         isRepeat = !isRepeat;
+        audioPlayer.loop = isRepeat;
         toggleModeButton(repeatButton, isRepeat);
     });
 }
@@ -313,6 +337,9 @@ if (repeatButton) {
 if (progressBar) {
     progressBar.addEventListener('input', function () {
         elapsedSeconds = Number(progressBar.value);
+        if (Number.isFinite(audioPlayer.duration)) {
+            audioPlayer.currentTime = elapsedSeconds;
+        }
         updateProgress();
     });
 }
@@ -321,6 +348,7 @@ if (volumeBar) {
     volumeBar.addEventListener('input', function () {
         const percent = (volumeBar.value / volumeBar.max) * 100;
         volumeBar.style.setProperty('--porcentaje-relleno', percent + '%');
+        audioPlayer.volume = percent / 100;
     });
 }
 

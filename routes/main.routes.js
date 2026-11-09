@@ -8,6 +8,7 @@ const playlistDao = require('../dao/playlist');
 const reviewDao = require('../dao/review');
 const tracklistDao = require('../dao/tracklist');
 const artistDao = require('../dao/artist');
+const audioRoutes = require('./audio.routes');
 
 ////// Prueba para el servidor http://localhost:5000/main/test
 router.get('/test', (req, res) => {
@@ -30,6 +31,7 @@ router.delete('/users/:id', userDao.remove);
 router.get('/users/:id/playlists', playlistDao.getByUser);
 
 router.get('/songs', songDao.getAll);
+router.use(audioRoutes);
 router.get('/songs/:id', songDao.getById);
 router.post('/songs', songDao.create);
 router.put('/songs/:id', songDao.update);
