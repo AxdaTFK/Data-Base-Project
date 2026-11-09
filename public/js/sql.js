@@ -1,28 +1,32 @@
-const API_URL = '/main';
+const API_URL = "/main";
 
-function sendJson(path, method, data) {
-    return fetch(`${API_URL}${path}`, {
-        method: method,
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    });
+function sendJson(targetEndpointPath, httpMethod, payloadData) {
+  return fetch(`${API_URL}${targetEndpointPath}`, {
+    method: httpMethod,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payloadData),
+  });
 }
 
-async function getHomePage(user) {
-    if (user.is_admin) return 'admin-dashboard.html';
+async function getHomePage(currentUserObject) {
+  if (currentUserObject.is_admin) return "admin-dashboard.html";
 
-    const response = await fetch(`${API_URL}/suscriptions/${user.suscription_idsuscription}`);
-    const subscription = await response.json();
-    return String(subscription.type).toLowerCase() === 'premium' ? 'home-premium.html' : 'home-free.html';
+  const subscriptionResponse = await fetch(
+    `${API_URL}/suscriptions/${currentUserObject.suscription_idsuscription}`,
+  );
+  const subscriptionDetails = await subscriptionResponse.json();
+  return String(subscriptionDetails.type).toLowerCase() === "premium"
+    ? "home-premium.html"
+    : "home-free.html";
 }
 
 async function getFreePlan() {
-    const response = await fetch(`${API_URL}/suscriptions`);
-    const plans = await response.json();
+  const plansResponse = await fetch(`${API_URL}/suscriptions`);
+  const availablePlans = await plansResponse.json();
 
-    return plans.find(function (plan) {
-        return String(plan.type).toLowerCase() === 'free';
-    });
+  return availablePlans.find(function (targetPlan) {
+    return String(targetPlan.type).toLowerCase() === "free";
+  });
 }
