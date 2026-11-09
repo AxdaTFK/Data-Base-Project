@@ -57,6 +57,8 @@ async function loadSongData() {
         const albumText = song.album || 'Sin álbum';
 
         currentSongId = song.idsong;
+        audioPlayer.src = `${API_URL}/songs/${song.idsong}/audio`;
+        audioPlayer.load();
 
         const paragraphs = songDataBox.querySelectorAll('p');
         paragraphs[0].textContent = song.name;

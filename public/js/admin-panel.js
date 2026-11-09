@@ -378,6 +378,19 @@ if (contentForm && hasAdminAccess) {
                 return;
             }
 
+            const audioData = new FormData();
+            audioData.append('audio', audioFile);
+            const audioResponse = await fetch(`${API_URL}/songs/${result.idsong}/audio`, {
+                method: 'POST',
+                body: audioData
+            });
+            const audioResult = await audioResponse.json();
+
+            if (!audioResponse.ok) {
+                showMessage(audioResult.error || 'No se pudo guardar el audio.', true);
+                return;
+            }
+
             const coverFile = coverInput && coverInput.files[0];
             if (coverFile) await saveCover(result.idsong, coverFile);
 
