@@ -46,6 +46,7 @@ body>* {
     border: 0;
     border-radius: 29px;
     background: #ffffff;
+    text-align: center;
 }
 
 #submit-button {
